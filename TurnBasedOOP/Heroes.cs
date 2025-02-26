@@ -43,12 +43,22 @@ public class Heroes : ICharacter
         Health = Math.Min(Health + 5, MaxHealth);
         Console.WriteLine($"{Name} healed!");
     }
+
+    public virtual void showInfo()
+    {
+        Console.WriteLine("");
+    }
 }
 
 public class Pyro: Heroes{
     public Pyro(string name, int health, int attackPower) : base(name, health, attackPower)
     {
 
+    }
+
+    public override void showInfo()
+    {
+        Console.WriteLine($"Name: {Name}, Health: {Health}, Attack Power: {AttackPower}, Type: Pyro");
     }
 }
 
@@ -57,12 +67,20 @@ public class Cryo: Heroes{
     {
 
     }
+    public override void showInfo()
+    {
+        Console.WriteLine($"Name: {Name}, Health: {Health}, Attack Power: {AttackPower}, Type: Cryo");
+    }
 }
 
 public class Hydro: Heroes{
     public Hydro(string name, int health, int attackPower) : base(name, health, attackPower)
     {
 
+    }
+    public override void showInfo()
+    {
+        Console.WriteLine($"Name: {Name}, Health: {Health}, Attack Power: {AttackPower}, Type: Hydro");
     }
 }
 

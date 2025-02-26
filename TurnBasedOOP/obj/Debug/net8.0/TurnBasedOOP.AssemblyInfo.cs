@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TurnBasedOOP")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+78bc62ef280bb61926859744a6a213fff0866214")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1d83b046ad3c65eb5b9b8277b376f70933694e03")]
 [assembly: System.Reflection.AssemblyProductAttribute("TurnBasedOOP")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TurnBasedOOP")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
