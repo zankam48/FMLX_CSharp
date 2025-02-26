@@ -1,4 +1,13 @@
-public class Character
+public interface ICharacter
+{
+    string Name {get;}
+    int Health {get; set; }
+    bool isAlive();
+    void TakeDamage(int damage);
+    void Heal();
+}
+
+public class Heroes : ICharacter
 {
     public string Name { get; set; }
     public int Health { get; set; }
@@ -7,24 +16,22 @@ public class Character
     public int AttackPower { get; set; }
     public int Defense { get; set; }
 
-    public Character(string name, int health, int attackPower)
+    public Heroes(string name, int health, int attackPower)
     {
         Name = name;
         Health = health;
+        MaxHealth = health;
         AttackPower = attackPower;
     }
 
-    // public void AttackPowerChanged(object sender, AttackPowerChangedEventArgs e)
-    // public void Attack(){
-
-    // }
-
-    // public bool isAlive(){
-    // }
-
-    public void TakeDamage()
+    public bool isAlive()
     {
-        Health--;
+        return Health > 0;
+    }
+
+    public void TakeDamage(int damage)
+    {
+        Health -= damage;
         if (Health <= 0)
         {
             Console.WriteLine($"{Name} is dead!");
@@ -38,24 +45,25 @@ public class Character
     }
 }
 
-public class Pyro: Character{
+public class Pyro: Heroes{
     public Pyro(string name, int health, int attackPower) : base(name, health, attackPower)
     {
 
     }
 }
 
-public class Cryo: Character{
+public class Cryo: Heroes{
     public Cryo(string name, int health, int attackPower) : base(name, health, attackPower)
     {
 
     }
 }
 
-public class Hydro: Character{
+public class Hydro: Heroes{
     public Hydro(string name, int health, int attackPower) : base(name, health, attackPower)
     {
 
     }
 }
+
 
