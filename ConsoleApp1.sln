@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TurnBasedOOP", "TurnBasedOO
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CobaAspNet", "CobaAspNet\CobaAspNet.csproj", "{6EEE36A1-62BA-4801-B4FB-B1EF1D224B4E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day3_Collections", "Day3_Collections\Day3_Collections.csproj", "{23008F16-A301-48B9-8106-3955BD4E05D0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day3_PathFinding", "Day3_PathFinding\Day3_PathFinding.csproj", "{BB0E0E4C-1171-4969-8DE6-B414C535A6AA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,5 +46,13 @@ Global
 		{6EEE36A1-62BA-4801-B4FB-B1EF1D224B4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6EEE36A1-62BA-4801-B4FB-B1EF1D224B4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6EEE36A1-62BA-4801-B4FB-B1EF1D224B4E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23008F16-A301-48B9-8106-3955BD4E05D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23008F16-A301-48B9-8106-3955BD4E05D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23008F16-A301-48B9-8106-3955BD4E05D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23008F16-A301-48B9-8106-3955BD4E05D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB0E0E4C-1171-4969-8DE6-B414C535A6AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB0E0E4C-1171-4969-8DE6-B414C535A6AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB0E0E4C-1171-4969-8DE6-B414C535A6AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB0E0E4C-1171-4969-8DE6-B414C535A6AA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
