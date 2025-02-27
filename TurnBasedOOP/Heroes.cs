@@ -5,6 +5,9 @@ public interface ICharacter
     bool isAlive();
     void TakeDamage(int damage);
     void Heal();
+    void ShowInfo();
+    void GainExp(int exp);
+    int LevelUp {set;}
 }
 
 public class Heroes : ICharacter
@@ -16,12 +19,21 @@ public class Heroes : ICharacter
     public int AttackPower { get; set; }
     public int Defense { get; set; }
 
-    public Heroes(string name, int health, int attackPower)
+
+    public Heroes(string name)
     {
         Name = name;
-        Health = health;
-        MaxHealth = health;
-        AttackPower = attackPower;
+        Health = 200;
+        MaxHealth = 200;
+        AttackPower = 100;
+    }
+
+    public int LevelUp
+    {
+        set
+        {
+
+        }
     }
 
     public bool isAlive()
@@ -44,14 +56,14 @@ public class Heroes : ICharacter
         Console.WriteLine($"{Name} healed!");
     }
 
-    public virtual void showInfo()
+    public virtual void ShowInfo()
     {
         Console.WriteLine("");
     }
 }
 
 public class Pyro: Heroes{
-    public Pyro(string name, int health, int attackPower) : base(name, health, attackPower)
+    public Pyro(string name) : base(name)
     {
 
     }
@@ -63,7 +75,7 @@ public class Pyro: Heroes{
 }
 
 public class Cryo: Heroes{
-    public Cryo(string name, int health, int attackPower) : base(name, health, attackPower)
+    public Cryo(string name) : base(name)
     {
 
     }
@@ -74,7 +86,7 @@ public class Cryo: Heroes{
 }
 
 public class Hydro: Heroes{
-    public Hydro(string name, int health, int attackPower) : base(name, health, attackPower)
+    public Hydro(string name) : base(name) 
     {
 
     }
