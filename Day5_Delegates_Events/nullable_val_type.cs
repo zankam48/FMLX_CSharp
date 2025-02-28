@@ -36,6 +36,6 @@ int? x = o as int?;
 print x.HasValue // false
 
 /***
-OPERATOR LIFITING
+OPERATOR LIFITING NTAR
 ***/
 
