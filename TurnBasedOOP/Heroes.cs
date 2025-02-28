@@ -32,7 +32,8 @@ public class Heroes : ICharacter
     {
         set
         {
-
+            _level += value;
+            
         }
     }
 

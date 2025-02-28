@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Day4_CobaYangMasihBingung")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+105e458f2b0e33e44e0bec7035e8fd0b399e058b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+08309537cd54c3ae1a1101775d947264f9e7a6cd")]
 [assembly: System.Reflection.AssemblyProductAttribute("Day4_CobaYangMasihBingung")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Day4_CobaYangMasihBingung")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
