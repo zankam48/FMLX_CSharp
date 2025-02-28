@@ -1,36 +1,38 @@
 using System;
 
 // trying to learn about pass by reference as well 
+// pake ref datanya keubah final data : DlrXow olleh
+// no ref final data : hello world
 public class DataProcessor
 {
-    public delegate void DataProcessing(ref string data);
+    public delegate void DataProcessing( string data);
 
-    static void reverseData(ref string data)
+    static void reverseData( string data)
     {
         char[] charArray = data.ToCharArray();
         Array.Reverse(charArray);
         data = new string(charArray);
     }
 
-    static void addCharAtFirstIdx(ref string data, char c)
+    static void addCharAtFirstIdx( string data, char c)
     {
         data = c + data.Substring(1);
     }
 
-    static void addCharAtIdx(ref string data, char c, int idx)
+    static void addCharAtIdx( string data, char c, int idx)
     {
         data = data.Substring(0, idx) + c + data.Substring(idx);
     }
 
-    public void ProcessData(ref string data)
+    public void ProcessData( string data)
     {
         DataProcessing dataHandlers = reverseData;
-        DataProcessing addFirst = (ref string s) => addCharAtFirstIdx(ref s, 'D');
-        DataProcessing addAtIdx = (ref string s) => addCharAtIdx(ref s, 'X', 3);
+        DataProcessing addFirst = ( string s) => addCharAtFirstIdx( s, 'D');
+        DataProcessing addAtIdx = ( string s) => addCharAtIdx( s, 'X', 3);
 
         dataHandlers += addFirst;
         dataHandlers += addAtIdx;
-        dataHandlers(ref data);
+        dataHandlers( data);
     }
 }
 
@@ -42,7 +44,7 @@ class Program
         string data = "hello world";
 
         DataProcessor processor = new DataProcessor();
-        processor.ProcessData(ref data);
+        processor.ProcessData( data);
 
         Console.WriteLine("Final Data: " + data);
     }
