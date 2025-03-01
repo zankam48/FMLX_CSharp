@@ -10,9 +10,9 @@ public class VoltageSensor : ISensor
         Console.WriteLine($"Voltage: {Voltage}V");
     }
 
-    public string SensorInfo()
+    public string Info()
     {
-        return $"Voltage Sensor";
+        return $"Voltage Sensor: Voltage = {Voltage}";
     }
 
 }

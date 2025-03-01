@@ -10,7 +10,7 @@ public class CurrentSensor : ISensor
         Console.WriteLine($"Current: {Current}A");
     }
 
-    public string SensorInfo()
+    public string Info()
     {
         return $"Current Sensor";
     }
