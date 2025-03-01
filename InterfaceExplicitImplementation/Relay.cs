@@ -1,20 +1,22 @@
+using IoTInterfaces;
+
 public class Relay : IActuator
 {
     public bool IsActivated { get; set; }
 
-    public void Activate()
+    void IActuator.Activate()
     {
         IsActivated = true;
         Console.WriteLine("Relay activated.");
     }
 
-    public void Deactivate()
+    void IActuator.Deactivate()
     {
         IsActivated = false;
         Console.WriteLine("Relay deactivated.");
     }
 
-    public string Info()
+    string IActuator.Info()
     {
         return $"Relay";
     }
