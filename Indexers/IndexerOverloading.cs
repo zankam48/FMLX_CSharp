@@ -2,18 +2,18 @@ using System;
 
 public class Heroes
 {
-    private string[] _brands = new string[] {"Grim Reaper", "Cyber Medic", "Heavy Crasher"};
+    private string[] _heroes = new string[] {"Grim Reaper", "Cyber Medic", "Heavy Crasher"};
     private string[] _role = new string[] {"Attacker", "Healer", "Tank"};
 
     public string this[int index]
     {
         set
         {
-            this._brands[index] = value;
+            this._heroes[index] = value;
         }
         get
         {
-            return this._brands[index];
+            return this._heroes[index];
         }
     }
 
@@ -25,7 +25,7 @@ public class Heroes
         }
         get
         {
-            
+            return _heroes[Array.IndexOf(_role, role)];
         }
     }
 }
