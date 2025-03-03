@@ -1,6 +1,7 @@
 ﻿Console.WriteLine("Welcome to Text Based Genshin Impact");
 
 Game game = new Game();
+game.Run();
 
 /***
 1. Create username and password
