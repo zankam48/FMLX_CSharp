@@ -1,0 +1,15 @@
+C:\Users\Batch 12\Documents\Zankam\FMLX_CSharp\EnumeratorIterator\bin\Debug\net8.0\EnumeratorIterator.exe
+C:\Users\Batch 12\Documents\Zankam\FMLX_CSharp\EnumeratorIterator\bin\Debug\net8.0\EnumeratorIterator.deps.json
+C:\Users\Batch 12\Documents\Zankam\FMLX_CSharp\EnumeratorIterator\bin\Debug\net8.0\EnumeratorIterator.runtimeconfig.json
+C:\Users\Batch 12\Documents\Zankam\FMLX_CSharp\EnumeratorIterator\bin\Debug\net8.0\EnumeratorIterator.dll
+C:\Users\Batch 12\Documents\Zankam\FMLX_CSharp\EnumeratorIterator\bin\Debug\net8.0\EnumeratorIterator.pdb
+C:\Users\Batch 12\Documents\Zankam\FMLX_CSharp\EnumeratorIterator\obj\Debug\net8.0\EnumeratorIterator.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Batch 12\Documents\Zankam\FMLX_CSharp\EnumeratorIterator\obj\Debug\net8.0\EnumeratorIterator.AssemblyInfoInputs.cache
+C:\Users\Batch 12\Documents\Zankam\FMLX_CSharp\EnumeratorIterator\obj\Debug\net8.0\EnumeratorIterator.AssemblyInfo.cs
+C:\Users\Batch 12\Documents\Zankam\FMLX_CSharp\EnumeratorIterator\obj\Debug\net8.0\EnumeratorIterator.csproj.CoreCompileInputs.cache
+C:\Users\Batch 12\Documents\Zankam\FMLX_CSharp\EnumeratorIterator\obj\Debug\net8.0\EnumeratorIterator.sourcelink.json
+C:\Users\Batch 12\Documents\Zankam\FMLX_CSharp\EnumeratorIterator\obj\Debug\net8.0\EnumeratorIterator.dll
+C:\Users\Batch 12\Documents\Zankam\FMLX_CSharp\EnumeratorIterator\obj\Debug\net8.0\refint\EnumeratorIterator.dll
+C:\Users\Batch 12\Documents\Zankam\FMLX_CSharp\EnumeratorIterator\obj\Debug\net8.0\EnumeratorIterator.pdb
+C:\Users\Batch 12\Documents\Zankam\FMLX_CSharp\EnumeratorIterator\obj\Debug\net8.0\EnumeratorIterator.genruntimeconfig.cache
+C:\Users\Batch 12\Documents\Zankam\FMLX_CSharp\EnumeratorIterator\obj\Debug\net8.0\ref\EnumeratorIterator.dll
