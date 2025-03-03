@@ -1,0 +1,15 @@
+C:\Users\Batch 12\Documents\Hikamizan\Day4_CobaYangMasihBingung\bin\Debug\net8.0\Day4_CobaYangMasihBingung.exe
+C:\Users\Batch 12\Documents\Hikamizan\Day4_CobaYangMasihBingung\bin\Debug\net8.0\Day4_CobaYangMasihBingung.deps.json
+C:\Users\Batch 12\Documents\Hikamizan\Day4_CobaYangMasihBingung\bin\Debug\net8.0\Day4_CobaYangMasihBingung.runtimeconfig.json
+C:\Users\Batch 12\Documents\Hikamizan\Day4_CobaYangMasihBingung\bin\Debug\net8.0\Day4_CobaYangMasihBingung.dll
+C:\Users\Batch 12\Documents\Hikamizan\Day4_CobaYangMasihBingung\bin\Debug\net8.0\Day4_CobaYangMasihBingung.pdb
+C:\Users\Batch 12\Documents\Hikamizan\Day4_CobaYangMasihBingung\obj\Debug\net8.0\Day4_CobaYangMasihBingung.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Batch 12\Documents\Hikamizan\Day4_CobaYangMasihBingung\obj\Debug\net8.0\Day4_CobaYangMasihBingung.AssemblyInfoInputs.cache
+C:\Users\Batch 12\Documents\Hikamizan\Day4_CobaYangMasihBingung\obj\Debug\net8.0\Day4_CobaYangMasihBingung.AssemblyInfo.cs
+C:\Users\Batch 12\Documents\Hikamizan\Day4_CobaYangMasihBingung\obj\Debug\net8.0\Day4_CobaYangMasihBingung.csproj.CoreCompileInputs.cache
+C:\Users\Batch 12\Documents\Hikamizan\Day4_CobaYangMasihBingung\obj\Debug\net8.0\Day4_CobaYangMasihBingung.sourcelink.json
+C:\Users\Batch 12\Documents\Hikamizan\Day4_CobaYangMasihBingung\obj\Debug\net8.0\Day4_CobaYangMasihBingung.dll
+C:\Users\Batch 12\Documents\Hikamizan\Day4_CobaYangMasihBingung\obj\Debug\net8.0\refint\Day4_CobaYangMasihBingung.dll
+C:\Users\Batch 12\Documents\Hikamizan\Day4_CobaYangMasihBingung\obj\Debug\net8.0\Day4_CobaYangMasihBingung.pdb
+C:\Users\Batch 12\Documents\Hikamizan\Day4_CobaYangMasihBingung\obj\Debug\net8.0\Day4_CobaYangMasihBingung.genruntimeconfig.cache
+C:\Users\Batch 12\Documents\Hikamizan\Day4_CobaYangMasihBingung\obj\Debug\net8.0\ref\Day4_CobaYangMasihBingung.dll

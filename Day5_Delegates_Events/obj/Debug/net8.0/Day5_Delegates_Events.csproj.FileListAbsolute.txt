@@ -1,0 +1,15 @@
+C:\Users\Batch 12\Documents\Hikamizan\Day5_Delegates_Events\bin\Debug\net8.0\Day5_Delegates_Events.exe
+C:\Users\Batch 12\Documents\Hikamizan\Day5_Delegates_Events\bin\Debug\net8.0\Day5_Delegates_Events.deps.json
+C:\Users\Batch 12\Documents\Hikamizan\Day5_Delegates_Events\bin\Debug\net8.0\Day5_Delegates_Events.runtimeconfig.json
+C:\Users\Batch 12\Documents\Hikamizan\Day5_Delegates_Events\bin\Debug\net8.0\Day5_Delegates_Events.dll
+C:\Users\Batch 12\Documents\Hikamizan\Day5_Delegates_Events\bin\Debug\net8.0\Day5_Delegates_Events.pdb
+C:\Users\Batch 12\Documents\Hikamizan\Day5_Delegates_Events\obj\Debug\net8.0\Day5_Delegates_Events.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Batch 12\Documents\Hikamizan\Day5_Delegates_Events\obj\Debug\net8.0\Day5_Delegates_Events.AssemblyInfoInputs.cache
+C:\Users\Batch 12\Documents\Hikamizan\Day5_Delegates_Events\obj\Debug\net8.0\Day5_Delegates_Events.AssemblyInfo.cs
+C:\Users\Batch 12\Documents\Hikamizan\Day5_Delegates_Events\obj\Debug\net8.0\Day5_Delegates_Events.csproj.CoreCompileInputs.cache
+C:\Users\Batch 12\Documents\Hikamizan\Day5_Delegates_Events\obj\Debug\net8.0\Day5_Delegates_Events.sourcelink.json
+C:\Users\Batch 12\Documents\Hikamizan\Day5_Delegates_Events\obj\Debug\net8.0\Day5_Delegates_Events.dll
+C:\Users\Batch 12\Documents\Hikamizan\Day5_Delegates_Events\obj\Debug\net8.0\refint\Day5_Delegates_Events.dll
+C:\Users\Batch 12\Documents\Hikamizan\Day5_Delegates_Events\obj\Debug\net8.0\Day5_Delegates_Events.pdb
+C:\Users\Batch 12\Documents\Hikamizan\Day5_Delegates_Events\obj\Debug\net8.0\Day5_Delegates_Events.genruntimeconfig.cache
+C:\Users\Batch 12\Documents\Hikamizan\Day5_Delegates_Events\obj\Debug\net8.0\ref\Day5_Delegates_Events.dll

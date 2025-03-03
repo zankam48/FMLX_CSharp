@@ -1,0 +1,15 @@
+C:\Users\Batch 12\Documents\Hikamizan\OOP\bin\Debug\net8.0\OOP.exe
+C:\Users\Batch 12\Documents\Hikamizan\OOP\bin\Debug\net8.0\OOP.deps.json
+C:\Users\Batch 12\Documents\Hikamizan\OOP\bin\Debug\net8.0\OOP.runtimeconfig.json
+C:\Users\Batch 12\Documents\Hikamizan\OOP\bin\Debug\net8.0\OOP.dll
+C:\Users\Batch 12\Documents\Hikamizan\OOP\bin\Debug\net8.0\OOP.pdb
+C:\Users\Batch 12\Documents\Hikamizan\OOP\obj\Debug\net8.0\OOP.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Batch 12\Documents\Hikamizan\OOP\obj\Debug\net8.0\OOP.AssemblyInfoInputs.cache
+C:\Users\Batch 12\Documents\Hikamizan\OOP\obj\Debug\net8.0\OOP.AssemblyInfo.cs
+C:\Users\Batch 12\Documents\Hikamizan\OOP\obj\Debug\net8.0\OOP.csproj.CoreCompileInputs.cache
+C:\Users\Batch 12\Documents\Hikamizan\OOP\obj\Debug\net8.0\OOP.sourcelink.json
+C:\Users\Batch 12\Documents\Hikamizan\OOP\obj\Debug\net8.0\OOP.dll
+C:\Users\Batch 12\Documents\Hikamizan\OOP\obj\Debug\net8.0\refint\OOP.dll
+C:\Users\Batch 12\Documents\Hikamizan\OOP\obj\Debug\net8.0\OOP.pdb
+C:\Users\Batch 12\Documents\Hikamizan\OOP\obj\Debug\net8.0\OOP.genruntimeconfig.cache
+C:\Users\Batch 12\Documents\Hikamizan\OOP\obj\Debug\net8.0\ref\OOP.dll

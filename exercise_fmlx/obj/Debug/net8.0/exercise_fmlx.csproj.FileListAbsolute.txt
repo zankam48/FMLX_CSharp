@@ -1,0 +1,15 @@
+C:\Users\Batch 12\Documents\Hikamizan\exercise_fmlx\bin\Debug\net8.0\exercise_fmlx.exe
+C:\Users\Batch 12\Documents\Hikamizan\exercise_fmlx\bin\Debug\net8.0\exercise_fmlx.deps.json
+C:\Users\Batch 12\Documents\Hikamizan\exercise_fmlx\bin\Debug\net8.0\exercise_fmlx.runtimeconfig.json
+C:\Users\Batch 12\Documents\Hikamizan\exercise_fmlx\bin\Debug\net8.0\exercise_fmlx.dll
+C:\Users\Batch 12\Documents\Hikamizan\exercise_fmlx\bin\Debug\net8.0\exercise_fmlx.pdb
+C:\Users\Batch 12\Documents\Hikamizan\exercise_fmlx\obj\Debug\net8.0\exercise_fmlx.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Batch 12\Documents\Hikamizan\exercise_fmlx\obj\Debug\net8.0\exercise_fmlx.AssemblyInfoInputs.cache
+C:\Users\Batch 12\Documents\Hikamizan\exercise_fmlx\obj\Debug\net8.0\exercise_fmlx.AssemblyInfo.cs
+C:\Users\Batch 12\Documents\Hikamizan\exercise_fmlx\obj\Debug\net8.0\exercise_fmlx.csproj.CoreCompileInputs.cache
+C:\Users\Batch 12\Documents\Hikamizan\exercise_fmlx\obj\Debug\net8.0\exercise_fmlx.sourcelink.json
+C:\Users\Batch 12\Documents\Hikamizan\exercise_fmlx\obj\Debug\net8.0\exercise_fmlx.dll
+C:\Users\Batch 12\Documents\Hikamizan\exercise_fmlx\obj\Debug\net8.0\refint\exercise_fmlx.dll
+C:\Users\Batch 12\Documents\Hikamizan\exercise_fmlx\obj\Debug\net8.0\exercise_fmlx.pdb
+C:\Users\Batch 12\Documents\Hikamizan\exercise_fmlx\obj\Debug\net8.0\exercise_fmlx.genruntimeconfig.cache
+C:\Users\Batch 12\Documents\Hikamizan\exercise_fmlx\obj\Debug\net8.0\ref\exercise_fmlx.dll
