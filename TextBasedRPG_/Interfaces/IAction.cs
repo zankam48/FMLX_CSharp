@@ -13,14 +13,6 @@ public class BasicAttackAction : IAction
     }
 }
 
-public class ChargedAttackAction : IAction
-{
-    public void Execute(Character char1, IDamageable target)
-    {
-        Console.WriteLine("Charged attack...");
-    }
-}
-
 public class UltimateAttackAction : IAction
 {
     public void Execute(Character char1, IDamageable target)
