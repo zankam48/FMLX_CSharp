@@ -2,20 +2,24 @@ using System;
 
 namespace TextBasedRPG;
 
-public abstract class Character
+public enum ElementType
 {
-    private int _id;
-    private string _name;
+    Cryo,
+    Pyro,
+    Hydro
+}
+
+public abstract class Character : IDamageable, IIDentifiable
+{
+    
+    public required string Name { get; set; }
+    public required string Id { get; set; }
+    
     private int _health;
     private int _healthMax;
 
-    public string Name { get; set; }
-    public int Id { get; set; }
-    
+    // public int Id { get; set; }
 
-    public virtual void GetInfo()
-    {
-        Console.WriteLine($"Name: {_name}, Health: {_health}/{_healthMax}");
-    }
+    public abstract void TakeDamage(int damage);
 
 }

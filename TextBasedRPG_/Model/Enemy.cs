@@ -4,5 +4,5 @@ namespace TextBasedRPG;
 
 public class Enemy
 {
-
+    
 }

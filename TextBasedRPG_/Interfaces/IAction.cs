@@ -5,17 +5,26 @@ public interface IAction
     void Execute(Character char1, IDamageable target);
 }
 
-public class AttackAction : IAction
+public class BasicAttackAction : IAction
 {
-    public void Execute(Character char1, IDamageable target, string type2)
+    public void Execute(Character char1, IDamageable target)
     {
         Console.WriteLine("Attacking...");
     }
+}
 
+public class ChargedAttackAction : IAction
+{
     public void Execute(Character char1, IDamageable target)
     {
-        throw new NotImplementedException();
+        Console.WriteLine("Charged attack...");
     }
 }
 
-// public class 
+public class UltimateAttackAction : IAction
+{
+    public void Execute(Character char1, IDamageable target)
+    {
+        Console.WriteLine("Using ultimate attack...");
+    }
+}
