@@ -8,6 +8,13 @@ public class Game
         set {this.end = value;}
     }
     private Stack<State> states; 
+
+    private void InitialStates()
+    {
+        this.states = new Stack<State>();
+        // Console.WriteLine(states.GetHashCode());
+        this.states.Push(new State(this.states));
+    }
     
     private void InitialVar()
     {
@@ -16,6 +23,7 @@ public class Game
     public Game()
     {
         this.InitialVar();
+        this.InitialStates();
         Console.WriteLine("Game Class");
     }
     public void Run()
