@@ -15,10 +15,12 @@ public abstract class Character : IDamageable, IIDentifiable
     public required string Name { get; set; }
     public required string Id { get; set; }
     
-    private int _health;
-    private int _healthMax;
+    public int Health { get; set; }
+    public int MaxHealth { get; set; }
+    public int AttackPower { get; set; }
 
-    // public int Id { get; set; }
+    public Character(string Name, int AttackPower)
+    {}
 
     public abstract void TakeDamage(int damage);
 
