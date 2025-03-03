@@ -10,7 +10,7 @@ public class Enemy : Character
         AttackPower = attackPower;
         Element = element;
     }
-    public override void TakeDamage(int damage)
+    public override void TakeDamage(double damage)
     {
         Health -= damage;
         Console.WriteLine($"{Name} has taken {damage} damage, and now has {Health} health.");
