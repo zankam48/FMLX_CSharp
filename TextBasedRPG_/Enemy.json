@@ -1,0 +1,39 @@
+[
+    {
+        "id": 1,
+        "name": "Hilichurl",
+        "type": "Mob",
+        "description": "A sword with a sharp edge and a gleaming blade."
+    },
+    {
+        "id": 2,
+        "name": "Big Hilichurl",
+        "type": "Mob",
+        "description": "A sword with a sharp edge and a gleaming blade."
+    },
+    {
+        "id": 3,
+        "name": "Homa",
+        "type": "Polearm",
+        "description": "A sword with a sharp edge and a gleaming blade."
+    },
+    {
+        "id": 4,
+        "name": "Regular Blade",
+        "type": "Sword",
+        "description": "A sword with a sharp edge and a gleaming blade."
+    },
+    {
+        "id": 5,
+        "name": "Jade Cutter",
+        "type": "Sword",
+        "description": "A sword with a sharp edge and a gleaming blade."
+    },
+    {
+        "id": 6,
+        "name": "Jade Cutter",
+        "type": "Sword",
+        "description": "A sword with a sharp edge and a gleaming blade."
+    }
+    
+]

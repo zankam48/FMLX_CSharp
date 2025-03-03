@@ -1,0 +1,26 @@
+[
+    {
+        "id": 0,
+        "name": "Hikamizan",
+        "role": "Game Master",
+        "element": "All Elements including light and darkness",
+        "rarity": "Unlimited",
+        "description": "The Greatest to ever walk on heaven and earth."
+    },
+    {
+        "id": 1,
+        "name": "Hu Tap",
+        "role": "Polearm",
+        "element": "Pyro",
+        "rarity": "5 Star",
+        "description": "A sword with a sharp edge and a gleaming blade."
+    },
+    {
+        "id": 2,
+        "name": "Ayaka",
+        "role": "Swordsman",
+        "element": "Cryo",
+        "rarity": "5 Star",
+        "description": "A sword with a sharp edge and a gleaming blade."
+    }
+]
