@@ -1,8 +1,8 @@
-// using System;
+using System;
 
-// namespace TextBasedRPG;
+namespace TextBasedRPG;
 
-// public class Enemy
-// {
+public class Enemy
+{
 
-// }
+}
