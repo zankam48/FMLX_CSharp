@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Diagnostics;
 
 class Program
@@ -8,9 +8,9 @@ class Program
         string searchQuery = "C# programming tutorial";
         
         string encodedQuery = Uri.EscapeDataString(searchQuery);
-        string chromePath = @"C:\Program Files\Google\Chrome\Application\chrome.exe";
+        
         string url = "https://www.google.com/search?q=" + encodedQuery;
         
-        Process.Start(chromePath, url);
+        Process.Start("chrome", url);
     }
 }
