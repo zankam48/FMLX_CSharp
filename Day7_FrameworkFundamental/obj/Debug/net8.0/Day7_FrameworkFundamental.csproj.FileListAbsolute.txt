@@ -1,0 +1,15 @@
+C:\Users\Batch 12\Documents\Zankam\FMLX_CSharp\Day7_FrameworkFundamental\bin\Debug\net8.0\Day7_FrameworkFundamental.exe
+C:\Users\Batch 12\Documents\Zankam\FMLX_CSharp\Day7_FrameworkFundamental\bin\Debug\net8.0\Day7_FrameworkFundamental.deps.json
+C:\Users\Batch 12\Documents\Zankam\FMLX_CSharp\Day7_FrameworkFundamental\bin\Debug\net8.0\Day7_FrameworkFundamental.runtimeconfig.json
+C:\Users\Batch 12\Documents\Zankam\FMLX_CSharp\Day7_FrameworkFundamental\bin\Debug\net8.0\Day7_FrameworkFundamental.dll
+C:\Users\Batch 12\Documents\Zankam\FMLX_CSharp\Day7_FrameworkFundamental\bin\Debug\net8.0\Day7_FrameworkFundamental.pdb
+C:\Users\Batch 12\Documents\Zankam\FMLX_CSharp\Day7_FrameworkFundamental\obj\Debug\net8.0\Day7_FrameworkFundamental.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Batch 12\Documents\Zankam\FMLX_CSharp\Day7_FrameworkFundamental\obj\Debug\net8.0\Day7_FrameworkFundamental.AssemblyInfoInputs.cache
+C:\Users\Batch 12\Documents\Zankam\FMLX_CSharp\Day7_FrameworkFundamental\obj\Debug\net8.0\Day7_FrameworkFundamental.AssemblyInfo.cs
+C:\Users\Batch 12\Documents\Zankam\FMLX_CSharp\Day7_FrameworkFundamental\obj\Debug\net8.0\Day7_FrameworkFundamental.csproj.CoreCompileInputs.cache
+C:\Users\Batch 12\Documents\Zankam\FMLX_CSharp\Day7_FrameworkFundamental\obj\Debug\net8.0\Day7_FrameworkFundamental.sourcelink.json
+C:\Users\Batch 12\Documents\Zankam\FMLX_CSharp\Day7_FrameworkFundamental\obj\Debug\net8.0\Day7_FrameworkFundamental.dll
+C:\Users\Batch 12\Documents\Zankam\FMLX_CSharp\Day7_FrameworkFundamental\obj\Debug\net8.0\refint\Day7_FrameworkFundamental.dll
+C:\Users\Batch 12\Documents\Zankam\FMLX_CSharp\Day7_FrameworkFundamental\obj\Debug\net8.0\Day7_FrameworkFundamental.pdb
+C:\Users\Batch 12\Documents\Zankam\FMLX_CSharp\Day7_FrameworkFundamental\obj\Debug\net8.0\Day7_FrameworkFundamental.genruntimeconfig.cache
+C:\Users\Batch 12\Documents\Zankam\FMLX_CSharp\Day7_FrameworkFundamental\obj\Debug\net8.0\ref\Day7_FrameworkFundamental.dll
