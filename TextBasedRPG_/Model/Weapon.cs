@@ -3,16 +3,13 @@ using TextBasedRPG;
 public interface IWeapon
 {
     void ApplyStats(Heroes heroes);
-    void ApplyRefinement();
 }
 
 public class Sword : IWeapon
 {
     public void ApplyStats(Heroes heroes)
     {
-    }
-    public void ApplyRefinement()
-    {
+        heroes.AttackPower += 2;
     }
 }
 
@@ -20,9 +17,7 @@ public class Staff : IWeapon
 {
     public void ApplyStats(Heroes heroes)
     {
-    }
-    public void ApplyRefinement()
-    {
+        heroes.Element += 2;
     }
 }
 
@@ -30,8 +25,6 @@ public class Bow : IWeapon
 {
     public void ApplyStats(Heroes heroes)
     {
-    }
-    public void ApplyRefinement()
-    {
+        heroes.Health += 2;
     }
 }
