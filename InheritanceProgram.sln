@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day7_FrameworkFundamental",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day7_Collections", "Day7_Collections\Day7_Collections.csproj", "{CF7BA50E-FCED-4240-8875-3048BBD23821}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playground", "Playground\Playground.csproj", "{F1489A48-35DE-457A-8596-4E965E3DB9AB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -66,5 +68,9 @@ Global
 		{CF7BA50E-FCED-4240-8875-3048BBD23821}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CF7BA50E-FCED-4240-8875-3048BBD23821}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CF7BA50E-FCED-4240-8875-3048BBD23821}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1489A48-35DE-457A-8596-4E965E3DB9AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1489A48-35DE-457A-8596-4E965E3DB9AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1489A48-35DE-457A-8596-4E965E3DB9AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1489A48-35DE-457A-8596-4E965E3DB9AB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

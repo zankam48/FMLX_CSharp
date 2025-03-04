@@ -21,28 +21,25 @@
         "description": "A sword with a sharp edge and a gleaming blade."
     },
     {
-        "id": 1,
+        "id": 4,
         "name": "Regular Blade",
         "type": "Sword",
         "rarity": "3 Star",
-        "description": "A sword with a sharp edge and a gleaming blade.",
-        "price": 1500
+        "description": "A sword with a sharp edge and a gleaming blade."
     },
     {
         "id": 5,
-        "name": "Jade Cutter",
-        "type": "Sword",
-        "rarity": "Rare",
-        "description": "A sword with a sharp edge and a gleaming blade.",
-        "price": 1500
+        "name": "Sacrificial",
+        "type": "Catalyst",
+        "rarity": "4 Star",
+        "description": "A sword with a sharp edge and a gleaming blade."
     },
     {
         "id": 6,
         "name": "Jade Cutter",
         "type": "Sword",
         "rarity": "Rare",
-        "description": "A sword with a sharp edge and a gleaming blade.",
-        "price": 1500
+        "description": "A sword with a sharp edge and a gleaming blade."
     }
     
 ]
