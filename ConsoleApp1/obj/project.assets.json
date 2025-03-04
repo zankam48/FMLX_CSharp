@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Batch 12\\Documents\\Hikamizan\\ConsoleApp1\\ConsoleApp1.csproj",
+      "projectUniqueName": "C:\\Users\\Batch 12\\Documents\\Zankam\\FMLX_CSharp\\ConsoleApp1\\ConsoleApp1.csproj",
       "projectName": "ConsoleApp1",
-      "projectPath": "C:\\Users\\Batch 12\\Documents\\Hikamizan\\ConsoleApp1\\ConsoleApp1.csproj",
+      "projectPath": "C:\\Users\\Batch 12\\Documents\\Zankam\\FMLX_CSharp\\ConsoleApp1\\ConsoleApp1.csproj",
       "packagesPath": "C:\\Users\\Batch 12\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Batch 12\\Documents\\Hikamizan\\ConsoleApp1\\obj\\",
+      "outputPath": "C:\\Users\\Batch 12\\Documents\\Zankam\\FMLX_CSharp\\ConsoleApp1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Batch 12\\AppData\\Roaming\\NuGet\\NuGet.Config"
