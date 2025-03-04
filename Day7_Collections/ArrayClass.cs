@@ -17,3 +17,7 @@ class Program
         }
     }
 }
+
+// resizing array
+// int[] nums = {1,2,3};
+// Array.Resize(nums, 5);
