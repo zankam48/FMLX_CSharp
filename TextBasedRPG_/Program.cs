@@ -1,7 +1,17 @@
-﻿Console.WriteLine("Welcome to Text Based Genshin Impact");
+﻿using System;
 
-Game game = new Game();
-game.Run();
+// Console.WriteLine("Welcome to Text Based Genshin Impact");
+
+// Game game = new Game();
+// game.Run();
+
+public partial class Program
+{
+    static void Main(string[] args)
+    {
+        Console.WriteLine("Welcome to Text Based Genshin Impact");
+    }
+}
 
 /***
 1. Create username and password

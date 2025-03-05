@@ -22,7 +22,7 @@ public class Gacha
         return "pass";
     }
 
-    public double GetRate(double pity)
+    public double GetRate(int pity)
     {
         if (pity < 75)
         {

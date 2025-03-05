@@ -1,22 +1,52 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
-Console.WriteLine("Hello, World!");
+﻿using System;
+using System.Threading;
 
-// while
-Console.WriteLine("continue or break" );
-string choice = Console.ReadLine();
-
-while (choice == "continue")
+class Program
 {
-    Console.WriteLine("Hello, World!");
-    choice = Console.ReadLine();
-}
+    static void Main(string[] args)
+    {
+        int size = 10;
+        char[] verticalSquare = new char[size];
+
+        for (int i = 0; i < size; i++)
+        {
+            verticalSquare[i] = '_';
+        }
+
+        verticalSquare[0] = 'X';
+
+        int counter = size;
+        // int now = 0;
+        while (counter > 1)
+        {
+            Console.WriteLine("Input a step : ");
+            string step = Console.ReadLine();
+            int intStep = Convert.ToInt32(step);
+            for (int i = counter; i < intStep; i--)
+            {
+                Console.Clear();
+                DrawVerticalSquare(verticalSquare);
+
+                verticalSquare[counter] = '_';
+                verticalSquare[counter + 1] = 'X'; 
+
+                Thread.Sleep(500);
+            }
+            counter -= intStep; 
+        }
 
 
-// arr
-int[] myArr = [1,2,3,4,5];
+        
 
-foreach (int i in myArr)
-{
-    Console.WriteLine(i);
+        Console.Clear();
+        // DrawVerticalSquare(verticalSquare);
+    }
+
+    static void DrawVerticalSquare(char[] square)
+    {
+        for (int i = 0; i < square.Length; i++)
+        {
+            Console.WriteLine($"[{square[i]}]");
+        }
+    }
 }
