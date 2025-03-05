@@ -10,4 +10,14 @@ public class Player
         canMakeMove = false; 
     }
 
+    public void SetColor(PieceColor color)
+    {
+
+    }
+
+    public bool CheckWin()
+    {
+        return false;
+    }
+
 }
