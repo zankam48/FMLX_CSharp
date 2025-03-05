@@ -5,7 +5,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        int size = 10;
+        int size = 20;
         char[] verticalSquare = new char[size];
 
         for (int i = 0; i < size; i++)
@@ -15,31 +15,42 @@ class Program
 
         verticalSquare[0] = 'X';
 
-        int counter = size;
-        // int now = 0;
-        while (counter > 1)
+        int currentPosition = 0;
+
+        while (currentPosition < size - 1)
         {
-            Console.WriteLine("Input a step : ");
-            string step = Console.ReadLine();
-            int intStep = Convert.ToInt32(step);
-            for (int i = counter; i < intStep; i--)
+            Console.Clear();
+            DrawVerticalSquare(verticalSquare);
+
+            Console.Write("Enter the jump distance: ");
+            string input = Console.ReadLine();
+
+            if (int.TryParse(input, out int jump))
             {
-                Console.Clear();
-                DrawVerticalSquare(verticalSquare);
+                int newPosition = currentPosition + jump;
 
-                verticalSquare[counter] = '_';
-                verticalSquare[counter + 1] = 'X'; 
+                if (newPosition < size)
+                {
+                    verticalSquare[currentPosition] = '_';
 
-                Thread.Sleep(500);
+                    currentPosition = newPosition;
+                    verticalSquare[currentPosition] = 'X';
+                }
+                else
+                {
+                    Console.WriteLine("Jump exceeds the size of the list. Try a smaller number.");
+                    Thread.Sleep(1000); 
+                }
             }
-            counter -= intStep; 
+            else
+            {
+                Console.WriteLine("Invalid input! Please enter a valid integer.");
+                Thread.Sleep(1000); 
+            }
         }
-
-
-        
-
         Console.Clear();
-        // DrawVerticalSquare(verticalSquare);
+        DrawVerticalSquare(verticalSquare);
+        Console.WriteLine("The 'X' has reached the last position!");
     }
 
     static void DrawVerticalSquare(char[] square)
