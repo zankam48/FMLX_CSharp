@@ -3,7 +3,10 @@ using System;
 public class Game
 {
     private bool isEnd = false;
-    private Player player1 = new Player();
+    // private Player player1 = new Player("halo");
+    // private Piece piece1 = new Piece();
+    private List<Piece> pieces = new List<Piece>();
+    private List<Player> players = new List<Player>();
     private Board board;
 
     public Game(int boardSize)
@@ -30,8 +33,8 @@ public class Game
 
                 if (result == 6)
                 {
-                    player1.canMakeMove = true; // Set flag for making a move
-                    player1.MakeMove(result);  // Let player make the move
+                    players[0].canMakeMove = true; // Set flag for making a move
+                    players[0].ChoosePiece(pieces[0]);  // Let player make the move
                     board.MoveX(result);       // Move 'X' by the rolled dice result
 
                     // Check if the game is over
