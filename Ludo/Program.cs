@@ -1,3 +1,3 @@
-﻿Game game = new Game(20);
+﻿Game game = new Game();
 
 game.Run();

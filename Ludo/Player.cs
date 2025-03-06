@@ -3,7 +3,8 @@ public class Player
     public string name;
 
     public bool canMakeMove;
-    public List<Piece> pieces;
+    private int score;
+    public List<Piece> pieces = new List<Piece>();
 
     public Player(string name)
     {

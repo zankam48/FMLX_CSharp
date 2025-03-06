@@ -3,22 +3,14 @@ using System;
 public class Game
 {
     private bool isEnd = false;
-    // private Player player1 = new Player("halo");
-    // private Piece piece1 = new Piece();
-    private List<Piece> pieces = new List<Piece>();
     private List<Player> players = new List<Player>();
     private Board board;
 
-    public Game(int boardSize)
-    {
-        board = new Board(boardSize); // Initialize the board with the given size
-    }
 
     public void Run()
     {
         while (!isEnd)
         {
-            // Show the current state of the board
             board.DrawBoard();
 
             // Prompt the user to input the jump distance
