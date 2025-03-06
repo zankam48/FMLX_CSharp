@@ -3,11 +3,28 @@ public class Player
     public string name;
 
     public bool canMakeMove;
+    public List<Piece> pieces;
 
-    public void MakeMove(int value)
+    public Player(string name)
     {
-        Console.WriteLine("CanMakeMove now");
-        canMakeMove = false; 
+        this.name = name;
+
+    }
+
+    public void ChoosePiece(List<Piece> pieces)
+    {
+        int index;
+        if (pieces.Count == 1)
+        {
+            index = 0;
+        }
+        else
+        {
+            Console.WriteLine("test");
+            /***
+            kl pieces.Counte > 1, readline = int num, return index = num;
+            ***/
+        }
     }
 
     public void SetColor(PieceColor color)
