@@ -6,11 +6,11 @@ public class Player
     private int score;
     public List<Piece> pieces = new List<Piece>();
 
-    public Player(string name)
-    {
-        this.name = name;
+    // public Player(string name)
+    // {
+    //     this.name = name;
 
-    }
+    // }
 
     public void ChoosePiece(List<Piece> pieces)
     {
@@ -30,7 +30,7 @@ public class Player
 
     public void SetColor(PieceColor color)
     {
-
+        
     }
 
     public bool CheckWin()

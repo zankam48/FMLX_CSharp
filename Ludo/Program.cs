@@ -1,3 +1,3 @@
-﻿Game game = new Game();
+﻿using System;
 
-game.Run();
+

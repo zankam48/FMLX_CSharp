@@ -1,47 +1,63 @@
 using System;
 
-public class Game
+// public bool IsOverlapped(Piece piece1, Piece piece2)
+//     {
+//         return piece1.Position == piece2.Position && piece1.Player != piece2.Player;
+//     }
+
+// class Game {
+//         +Game(players: List~Player~, board: Board)
+//         +startGame() : void
+//         +endGame() : void
+//         +nextPlayerTurn() : void
+//         +currentPlayer : Player
+//         +players : List~Player~
+//         +getWinner() : Player
+//         +SetBoard() : void
+//         +Dice dice
+//         -Board board
+//         +isEnd : bool
+//         +MovePiece(Piece piece) : void
+//         +ChoosePiece(Piece piece) : piece
+//         +isOverlapped(Player player1, Player player2) : bool
+//         +RollDice() : int
+//         +Action~Player~OnNextPlayerTurn()
+//         +Action<Dice> OnDiceRoll
+//     }
+
+
+class Game 
 {
+    Dice dice = new Dice();
+    Player player = new Player();
+
     private bool isEnd = false;
-    private List<Player> players = new List<Player>();
-    private Board board;
-
-
-    public void Run()
+    
+    public bool isOverlapped(Piece piece1, Piece piece2)
     {
-        while (!isEnd)
-        {
-            board.DrawBoard();
+        return piece1.Position == piece2.Position && piece1.Player != piece2.Player;
+    }
 
-            // Prompt the user to input the jump distance
-            Console.WriteLine("Press 'y' to continue rolling dice, 'n' to end the game.");
-            string input = Console.ReadLine();
-            if (input == "y")
-            {
-                // Simulate the dice roll
-                Dice dice = new Dice();
-                int result = dice.Roll();
-                Console.WriteLine($"Rolling dice: {result}");
+    public void ChoosePiece(Piece piece)
+    {
 
-                if (result == 6)
-                {
-                    players[0].canMakeMove = true; // Set flag for making a move
-                    players[0].ChoosePiece(pieces[0]);  // Let player make the move
-                    board.MoveX(result);       // Move 'X' by the rolled dice result
+    }
 
-                    // Check if the game is over
-                    if (board.IsGameOver())
-                    {
-                        Console.WriteLine("The 'X' has reached the last position!");
-                        isEnd = true;
-                    }
-                }
-            }
-            else
-            {
-                // End the game if 'n' is pressed
-                isEnd = true;
-            }
+    public void MovePiece(Piece piece)
+    {
+        // piece.MoveWith
+    }
+
+    public void SetBoard(Board board)
+    {
+        
+    }
+
+    public void StartGame()
+    {
+        while (!isEnd){
+            // draw board
+
         }
     }
 }

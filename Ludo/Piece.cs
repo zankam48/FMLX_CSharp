@@ -1,3 +1,14 @@
+// class Piece {
+//         -Dice dice
+//         -PieceColor color
+//         -position : int
+//         +Piece(color: PieceColor, position: int)
+//         +MoveWithValue(int diceValue) : void
+//         +isAtGoal() : bool
+//         +isAtHome() : bool
+        
+//     }
+
 public enum PieceColor
 {
     GREEN,
@@ -21,9 +32,16 @@ public class Piece
         this.name = name;
     }
 
-    public bool IsOverlapped(Piece piece1, Piece piece2)
+    public bool IsAtHome()
     {
-        return piece1.Position == piece2.Position && piece1.Player != piece2.Player;
+        return true;
     }
+
+    public bool IsAtGoal()
+    {
+        return true;
+    }
+
+
     
 }
