@@ -99,24 +99,28 @@ classDiagram
     %% Instantiate di luar game controller, dan objeknya itu di pass as a parameter di game controllernya itu
     %% bintang = safe zone 
 
+
+/////////////////////////////////
 classDiagram
     class Game {
+        -Board board
+        -players : List~Player~
+        -Dice dice
+        -currentPlayer : Player
+        -isGameOver : bool
+
         +Game(players: List~Player~, board: Board)
         +StartGame() : void
         +EndGame() : void
-        +nextPlayerTurn() : void
-        +Action~Player~OnNextPlayerTurn()
-        +currentPlayer : Player
-        +players : List~Player~
+        +NextPlayerTurn() : void
+        +ExecuteTurn() : void
         +GetWinner() : Player
-        +SetBoard() : void
-        +Dice dice
-        -Board board
-        +isEnd : bool
-        +MovePiece(Piece piece) : void
-        +ChoosePiece(Piece piece) : piece
-        +isOverlapped(Player player1, Player player2) : bool
+        +CreateBoard() : void
+        +MovePiece(Piece piece, int diceValue) : void
+        +SelectPiece(Piece piece) : piece
+        +IsOverlapped(Player player1, Player player2) : bool
         +RollDice() : int
+        +Action~Player~OnNextPlayerTurn()
         +Action<Dice> OnDiceRoll
     }
 
@@ -130,30 +134,30 @@ classDiagram
         +Player(name: string, color: PieceColor, piece: List~Piece~, score: int)
         +SetColor(PieceColor color) : void 
         +GetScore() : int
-        
+        +HasPieceAtHome() : bool
         %% +CheckWin() : bool
-        -canMakeMove : bool
+        %% -canMakeMove : bool
     }
 
     class Board {
         -squares: List~Square~
-        -pieces: List~Piece~
+        %% -pieces: List~Piece~
         -safeZone: List~Square~
-        -startPositions: Dict~string, List int ~
-        -goalPositions: Dict~string, List int ~
+        -startPositions: Dict~PieceColor, List int ~
+        -goalPositions: Dict~PieceColor, List int ~
         +Board()
         +GetSquare(int position) : Square
         %% +SetGoal() : void
         +SetPath(Piece piece) : void
-        +GetGoalPositions() : Dict[str, int[]] 
-        +GetStartPositions() : Dict[str, int[]]
+        +GetGoalPositions() : Dict[PieceColor, int[]] 
+        +GetStartPositions() : Dict[PieceColor, int[]]
     }
 
     class Piece {
         -PieceColor color
         -position : int
         +Piece(color: PieceColor, position: int)
-        +MoveWithValue(int diceValue) : void
+        %% +MoveWithValue(int diceValue) : void
         +isAtGoal() : bool
         +isAtHome() : bool
         
@@ -163,7 +167,8 @@ classDiagram
         +Square(color: PieceColor, position: int)
         -PieceColor color
         -position : int
-        +isOccupied() : bool
+        -occupant : List~Piece~
+        +IsOccupied() : bool
         
     }
 
@@ -181,6 +186,13 @@ classDiagram
         GREEN
     }
 
+    class GameState {
+        <<enum>>
+        NOT_STARTED,
+        PLAYING,
+        FINISHED
+    }
+
     Game "" --> "2..4" Player : has
     Board "" *--* "8..16" Piece : contains
     Board *--* "72" Square : contains
@@ -188,7 +200,19 @@ classDiagram
     Player "1" --> "4" Piece : has
     PieceColor --> Piece
     Game --> Board
+    Game --> GameState
 
+%% readonly consideration
+%%     public enum MoveResult {
+%%     SUCCESS,
+%%     INVALID,
+%%     CAPTURED,
+%%     WIN
+%% }
+%% +OnTurnChanged : TurnChangedHandler
+%% +OnGameOver    : GameOverHandler
+%% +OnPieceMoved  : PieceMovedHandler
+%% +OnPieceCaptured : PieceCapturedHandler
     %% Delegatenya bisa dipake untuk rolldice kareana
     %% kita bisa aja punya 2 dadu dan value untuk rolldicenya diganti 
     %% add possible pawn to move -> choose pawn di player
@@ -199,4 +223,3 @@ classDiagram
     %% Instantiate di luar game controller, dan objeknya itu di pass as a parameter di game controllernya itu
     %% bintang = safe zone 
     %% skip player
-
