@@ -1,16 +1,16 @@
 public class Player
 {
-    public string name;
+    public string? name;
 
     public bool canMakeMove;
-    private int score;
-    public List<Piece> pieces = new List<Piece>();
+    public int Score { get; private set; }
+    private List<Piece> pieces;
 
-    // public Player(string name)
-    // {
-    //     this.name = name;
-
-    // }
+    public Player(string name, List<Piece> pieces)
+    {
+        this.name = name;
+        this.pieces = pieces;
+    }
 
     public void ChoosePiece(List<Piece> pieces)
     {
@@ -37,5 +37,11 @@ public class Player
     {
         return false;
     }
+
+    public List<Piece> GetPieces()
+    {
+        return pieces;
+    }
+
 
 }

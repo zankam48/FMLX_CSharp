@@ -1,47 +1,42 @@
-// class Piece {
-//         -Dice dice
-//         -PieceColor color
-//         -position : int
-//         +Piece(color: PieceColor, position: int)
-//         +MoveWithValue(int diceValue) : void
-//         +isAtGoal() : bool
-//         +isAtHome() : bool
-        
-//     }
-
-public enum PieceColor
-{
-    GREEN,
-    BLUE,
-    RED,
-    YELLOW
-}
-
 public class Piece
 {
-    string? name;
     public PieceColor Color { get; set; }
-    public int Position { get; set; }
-    public Player? Player { get; set; }
+    public Position Position { get; set; }
+    private bool atGoal = false;
 
-    // public Piece(PieceColor color, int position)
-    // {}
-
-    public Piece(string name)
+    public Piece(PieceColor color, Position position)
     {
-        this.name = name;
+        Color = color;
+        Position = position;
     }
-
-    public bool IsAtHome()
-    {
-        return true;
-    }
-
-    public bool IsAtGoal()
-    {
-        return true;
-    }
-
-
     
+    public void SetAtGoal()
+    {
+        atGoal = true;
+    }
+}
+
+public struct Position
+{
+    public int Row { get; set; }
+    public int Column { get; set; }
+
+    public Position(int row, int column)
+    {
+        Row = row;
+        Column = column;
+    }
+
+    public override bool Equals(Object obj)
+    {
+        if (obj is Position other)
+        {
+            return Row == other.Row && Column == other.Column;
+        } return false;
+    }
+
+    public override int GetHashCode()
+    {
+        return (Row, Column).GetHashCode();
+    }
 }
