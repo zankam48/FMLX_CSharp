@@ -6,25 +6,17 @@ public class LudoBoard
     private const int BOARD_SIZE = 15;
     private string[][] board;
 
-    // We'll store path data (row,col) in 0-based indexing.
-    // For each color, we have a main path (full loop) and a goal path.
     private Dictionary<string, List<(int row, int col)>> mainPaths;
 	private Dictionary<string, List<(int row, int col)>> goalPaths;
 
-
-    // Track piece's current position
-    // If pieceIndex < mainPaths[color].Count => still on main path
-    // else => we are in the goal path
-    private int pieceIndex = 0;        // number of steps traveled so far
+    private int pieceIndex = 0;       
     private bool pieceFinished = false;
 
-    // Selected color and its marker
-    private string pieceColor = "";    // "Red"/"Blue"/"Green"/"Yellow"
-    private string pieceMarker = "";   // "R"/"B"/"G"/"Y" for board display
+    private string pieceColor = "";    
+    private string pieceMarker = "";  
 
     public LudoBoard()
     {
-        // 1) Create the 2D (jagged) array of strings
         board = new string[BOARD_SIZE][];
         for (int r = 0; r < BOARD_SIZE; r++)
         {
@@ -35,15 +27,9 @@ public class LudoBoard
             }
         }
 
-        // 2) Initialize path dictionaries
-        // For demonstration, we use short, fictitious loops (not real Ludo).
-        // Adjust these to match your actual track layout.
         mainPaths = new Dictionary<string, List<(int, int)>>();
         goalPaths = new Dictionary<string, List<(int, int)>>();
 
-        // We store a short main path (loop) for each color, then a small goal path
-        // All coords are 0-based: (row,col).
-        // *** SAMPLE PATHS -- change as you like for your board ***
         
         // mainPaths = new List<int, int> {
         //     // red from (6,1) idx 0
@@ -110,9 +96,6 @@ public class LudoBoard
         };
     }
 
-    /// <summary>
-    /// Fills corner homes (like your code).
-    /// </summary>
     public void InitializeHomes()
     {
         MarkHome(0, 0, 6, 6, "R");    // Red home
@@ -121,15 +104,8 @@ public class LudoBoard
         MarkHome(9, 9, 15, 15, "Y");  // Yellow home
     }
 
-    /// <summary>
-    /// Mark the track with "." visually. (Optional)
-    /// </summary>
     public void SetPath()
     {
-        // Just a few lines to show some dots. 
-        // You might replicate calls to MarkPath(...) from your original code
-        // to match the actual board layout with ".".
-        // For brevity, let's just mark the entire row 6 and 9 with "." as an example:
         MarkPath(7, 6, 7, 1);  // LEFT
         MarkPath(7, 1, 9, 1);  // DOWN
         MarkPath(9, 1, 9, 6);  // RIGHT
@@ -146,17 +122,14 @@ public class LudoBoard
 
     private void MarkPath(int row1, int col1, int row2, int col2)
     {
-        // Convert from 1-based to 0-based
         int r1 = row1 - 1;
         int c1 = col1 - 1;
         int r2 = row2 - 1;
         int c2 = col2 - 1;
 
-        // Determine deltas
         int dr = (r2 > r1) ? 1 : (r2 < r1) ? -1 : 0;
         int dc = (c2 > c1) ? 1 : (c2 < c1) ? -1 : 0;
 
-        // Number of steps
         int steps = Math.Max(Math.Abs(r2 - r1), Math.Abs(c2 - c1));
 
         int rr = r1;
@@ -181,14 +154,8 @@ public class LudoBoard
         }
     }
 
-    // =============== Movement Logic ===============
-
-    /// <summary>
-    /// Choose color and set piece marker. Then place piece at mainPaths[color][0].
-    /// </summary>
     public void ChoosePieceColor()
     {
-        // Prompt for color
         Console.Write("Choose your piece color (Red/Blue/Green/Yellow): ");
         string input = Console.ReadLine().Trim();
         while (!(input.Equals("Red", StringComparison.OrdinalIgnoreCase)
@@ -199,10 +166,8 @@ public class LudoBoard
             Console.Write("Invalid choice. Please choose Red, Blue, Green, or Yellow: ");
             input = Console.ReadLine().Trim();
         }
-        // Normalize to capitalized
         pieceColor = char.ToUpper(input[0]) + input.Substring(1).ToLower();
 
-        // Set piece marker
         switch (pieceColor)
         {
             case "Red": pieceMarker = "R"; break;
@@ -211,17 +176,13 @@ public class LudoBoard
             case "Yellow": pieceMarker = "Y"; break;
         }
 
-        pieceIndex = 0;         // start at index 0 (on main path)
+        pieceIndex = 0;       
         pieceFinished = false;
 
-        // Place piece on the board
         var (row, col) = mainPaths[pieceColor][pieceIndex];
         board[row][col] = pieceMarker;
     }
 
-    /// <summary>
-    /// Move the piece by 'steps' along the main path, then into goal if needed.
-    /// </summary>
     public void MovePiece(int steps)
     {
         if (pieceFinished)
@@ -230,54 +191,41 @@ public class LudoBoard
             return;
         }
 
-        // 1) Remove from current board location -> restore "."
-        //    (or space if you prefer, but likely "." for path)
         var (oldRow, oldCol) = GetCurrentCoordinates();
         if (board[oldRow][oldCol] == pieceMarker)
         {
             board[oldRow][oldCol] = "."; 
         }
 
-        // 2) Calculate new position
         int newIndex = pieceIndex + steps;
 
-        // 3) Check if newIndex extends into the goal path
-        int mainCount = mainPaths[pieceColor].Count;   // how many squares in main path
-        int goalCount = goalPaths[pieceColor].Count;   // how many squares in goal path
+        int mainCount = mainPaths[pieceColor].Count;   
+        int goalCount = goalPaths[pieceColor].Count;   
 
         if (newIndex < mainCount)
         {
-            // Still on the main path
             pieceIndex = newIndex;
             var (r, c) = mainPaths[pieceColor][pieceIndex];
             board[r][c] = pieceMarker;
         }
         else
         {
-            // Potentially in the goal path
-            int over = newIndex - mainCount;  // how many steps into the goal path
+            int over = newIndex - mainCount;  
             if (over < goalCount)
             {
-                // In the goal path, place on goal path index = 'over'
-                pieceIndex = newIndex;  // track total steps traveled
+                pieceIndex = newIndex;  
                 var (gr, gc) = goalPaths[pieceColor][over];
                 board[gr][gc] = pieceMarker;
             }
             else
             {
-                // Beyond the final goal square => piece finished
                 Console.WriteLine($"{pieceColor} piece has FINISHED!");
                 pieceFinished = true;
-                pieceIndex = mainCount + goalCount; // or newIndex
+                pieceIndex = mainCount + goalCount; 
             }
         }
     }
 
-    /// <summary>
-    /// Get the 0-based (row,col) where the piece currently stands.
-    /// If pieceIndex < mainPath.Count => main path
-    /// else => goal path
-    /// </summary>
     private (int row, int col) GetCurrentCoordinates()
     {
         int mainCount = mainPaths[pieceColor].Count;
@@ -287,7 +235,6 @@ public class LudoBoard
         }
         else
         {
-            // in goal path
             int over = pieceIndex - mainCount;
             if (over < goalPaths[pieceColor].Count)
             {
@@ -295,15 +242,17 @@ public class LudoBoard
             }
             else
             {
-                // Off the board (finished), pick last goal square
                 over = goalPaths[pieceColor].Count - 1;
                 return goalPaths[pieceColor][Math.Max(over,0)];
             }
         }
     }
 
-    // =============== Helper ===============
 
+    // red home -> (1,1) (1,4) (4,1) (4,4)
+    // green home -> (10,1) (13,1) (10,4) (13,4)
+    // blue home -> (1,10) (1,13) (4,10) (4,13) 
+    // yellow home -> (10,10) (13,10) (10,13) (13,13) 
     private void MarkHome(int startRow, int startCol, int endRow, int endCol, string symbol)
     {
         for (int r = startRow; r < endRow; r++)
@@ -322,19 +271,14 @@ public class Program
     {
         var ludoBoard = new LudoBoard();
 
-        // 1) Place R/B/G/Y homes
         ludoBoard.InitializeHomes();
 
-        // 2) Mark some dots for visual reference
         ludoBoard.SetPath();
 
-        // 3) Ask user which color to use, place the piece
         ludoBoard.ChoosePieceColor();
 
-        // 4) Show initial board
         PrintAndPause(ludoBoard);
 
-        // 5) Repeatedly prompt for dice input
         while (true)
         {
             Console.Write("\nEnter a dice value (1-6) to move, or 0 to quit: ");
@@ -356,10 +300,8 @@ public class Program
                 continue;
             }
 
-            // Move piece
             ludoBoard.MovePiece(steps);
 
-            // Show board
             PrintAndPause(ludoBoard);
         }
 
