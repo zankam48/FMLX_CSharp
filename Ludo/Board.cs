@@ -20,57 +20,68 @@ public class LudoBoard
             }
         }
 
+        InitializeHomes();
+        DefineSafeZones();
+        SetPath();
+
+    }
+
+    public void InitializeHomes()
+    {
         // Red home
-        for (int r = 0; r < 6; r++)
-        {
-            for (int c = 0; c < 6; c++)
-            {
-                board[r][c] = "R";
-            }
-        }
+        MarkHome(0, 0, 6, 6, "R");
 
         // Blue home
-        for (int r = 0; r < 6; r++)
-        {
-            for (int c = 9; c < 15; c++)
-            {
-                board[r][c] = "B";
-            }
-        }
+        MarkHome(0, 9, 6, 15, "B");
 
         // Green home
-        for (int r = 9; r < 15; r++)
-        {
-            for (int c = 0; c < 6; c++)
-            {
-                board[r][c] = "G";
-            }
-        }
+        MarkHome(9, 0, 15, 6, "G");
 
         // Yellow home
-        for (int r = 9; r < 15; r++)
+        MarkHome(9, 9, 15, 15, "Y");
+    }
+
+    private void MarkHome(int startRow, int startCol, int endRow, int endCol, string symbol)
+    {
+        for (int r = startRow; r < endRow; r++)
         {
-            for (int c = 9; c < 15; c++)
+            for (int c = startCol; c < endCol; c++)
             {
-                board[r][c] = "Y";
+                board[r][c] = symbol;
             }
         }
     }
 
     public void SetPath()
     {
-        MarkPath(7, 6, 7, 1);
-        MarkPath(7, 1, 9, 1);
-        MarkPath(9, 1, 9, 6);
-        MarkPath(10, 7, 15, 7);
-        MarkPath(15, 7, 15, 9);
-        MarkPath(15, 9, 10, 9); 
-        MarkPath(9, 10, 9, 15);        
-        MarkPath(9, 15, 7, 15);       
-        MarkPath(7, 15, 7, 10);
-        MarkPath(6, 9, 1, 9);
-        MarkPath(1, 9, 1, 7);
-        MarkPath(1, 7, 6, 7);
+        // 7,2 : red first path, red has to rotate first meaning follow the markpath first before path to goal
+        // 7,2 7,1 8,1 : if one of the red piece is at this coordinate 2x means it has completed a rotation and will proceed to go to path to the goal 
+        // 8,1 -> 8,7 (goal) : path to goal
+
+        // 14,7 -> green first path
+        // 14,7 15,7 15,8 ->
+        // 15,8 -> 9,8 (goal)
+
+        // 9,14 -> yellow first path
+        // 9,14 9,15 8,15
+        // 8,15 -> 8,9 (goal)
+
+        // 2,9
+        // 2,9 1,9 1,8
+        // 1,8 -> 7,8 (goal)
+
+        MarkPath(7, 6, 7, 1); // LEFT
+        MarkPath(7, 1, 9, 1); // DOWN
+        MarkPath(9, 1, 9, 6); // RIGHT
+        MarkPath(10, 7, 15, 7); // DOWN
+        MarkPath(15, 7, 15, 9); // RIGHT
+        MarkPath(15, 9, 10, 9); // UP
+        MarkPath(9, 10, 9, 15); // RIGHT       
+        MarkPath(9, 15, 7, 15); // UP      
+        MarkPath(7, 15, 7, 10); // LEFT
+        MarkPath(6, 9, 1, 9); // UP
+        MarkPath(1, 9, 1, 7); // LEFT
+        MarkPath(1, 7, 6, 7); // DOWN
     }
     // row = y, col = x
     private void MarkPath(int row1, int col1, int row2, int col2)
@@ -141,6 +152,18 @@ public class LudoBoard
     public bool IsAtHome(Piece piece)
     {
         return startPositions[piece.Color].Contains(piece.Position);
+    }
+
+    public bool HasPieceAtHome(Player player)
+    {
+        foreach (var piece in player.GetPieces())
+        {
+            if (IsAtHome(piece)) 
+            {
+                return true; 
+            }
+        }
+        return false;
     }
 
     public bool IsAtGoal(Piece piece)

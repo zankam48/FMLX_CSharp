@@ -14,6 +14,15 @@ public class Piece
     {
         atGoal = true;
     }
+    // public void SetAtGoal()
+    // {
+    //     atGoal = true;
+    // }
+
+    // public bool IsAtGoal()
+    // {
+    //     return atGoal;
+    // }
 }
 
 public struct Position
@@ -29,10 +38,7 @@ public struct Position
 
     public override bool Equals(Object obj)
     {
-        if (obj is Position other)
-        {
-            return Row == other.Row && Column == other.Column;
-        } return false;
+        return obj is Position other && Row == other.Row && Column == other.Column;
     }
 
     public override int GetHashCode()
