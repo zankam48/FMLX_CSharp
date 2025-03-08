@@ -5,6 +5,11 @@ public class LudoBoard
     private List<Position> safeZones;
     private Dictionary<PieceColor, List<Position>> startPositions = new Dictionary<PieceColor, List<Position>>();
     private Dictionary<PieceColor, List<Position>> goalPositions = new Dictionary<PieceColor, List<Position>>();
+    private Dictionary<string, List<(int row, int col)>> mainPaths;
+	private Dictionary<string, List<(int row, int col)>> goalPaths;
+    private int pieceIndex = 0;      
+    private bool pieceFinished = false;
+    private List<(int row, int col)> fullPaths;
 
     public LudoBoard()
     {
@@ -54,21 +59,6 @@ public class LudoBoard
 
     public void SetPath()
     {
-        // 7,2 : red first path, red has to rotate first meaning follow the markpath first before path to goal
-        // 7,2 7,1 8,1 : if one of the red piece is at this coordinate 2x means it has completed a rotation and will proceed to go to path to the goal 
-        // 8,1 -> 8,7 (goal) : path to goal
-
-        // 14,7 -> green first path
-        // 14,7 15,7 15,8 ->
-        // 15,8 -> 9,8 (goal)
-
-        // 9,14 -> yellow first path
-        // 9,14 9,15 8,15
-        // 8,15 -> 8,9 (goal)
-
-        // 2,9
-        // 2,9 1,9 1,8
-        // 1,8 -> 7,8 (goal)
 
         MarkPath(7, 6, 7, 1); // LEFT
         MarkPath(7, 1, 9, 1); // DOWN
@@ -118,6 +108,15 @@ public class LudoBoard
         }
     }
 
+    public void DefineSafeZones()
+    {   
+        safeZones.Add(new Position(1,1));
+        safeZones.Add(new Position(2,2));
+        safeZones.Add(new Position(3,3));
+        safeZones.Add(new Position(4,4));
+    }
+
+
     public bool IsOverlapped(Player player1, Player player2)
     {
         foreach (var piece1 in player1.GetPieces())
@@ -136,14 +135,7 @@ public class LudoBoard
         return false;
     }
 
-    public void DefineSafeZones()
-    {   
-        safeZones.Add(new Position(1,1));
-        safeZones.Add(new Position(2,2));
-        safeZones.Add(new Position(3,3));
-        safeZones.Add(new Position(4,4));
-    }
-
+    
     public bool IsSafeZone(Position position)
     {
         return safeZones.Contains(position);
