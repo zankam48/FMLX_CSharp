@@ -10,6 +10,7 @@ public class LudoBoard
     // For each color, we have a main path (full loop) and a goal path.
     private Dictionary<string, List<(int row, int col)>> mainPaths;
 	private Dictionary<string, List<(int row, int col)>> goalPaths;
+    private List<(int row, int col)> fullPaths;
 
 
     // Track piece's current position
@@ -41,84 +42,38 @@ public class LudoBoard
         
         mainPaths = new Dictionary<string, List<(int, int)>>();
         goalPaths = new Dictionary<string, List<(int, int)>>();
-        List<(int, int)> fullPath = new List<(int, int)>();
+        fullPaths = new List<(int, int)>();
 
         // We store a short main path (loop) for each color, then a small goal path
         // All coords are 0-based: (row,col).
         // *** SAMPLE PATHS -- change as you like for your board ***
         
-        // mainPaths = new List<int, int> {
-            // red from (6,1) idx 0
-            // green idx 13
-            // yellow idx 26
-            // blue idx 39
-        //     (6,1), (6,0), (7,0), (8,0), (8,1), (8,2), (8,3), (8,4), (8,5),
-        //     (9,6), (10,6), (11,6), (12,6), (13,6), (14,6), (14,7), 
-        //     (14,8), (13,8), (12,8), (11,8), (10,8), (9,8), (8,9), (8,10), 
-        //     (8,11), (8,12), (8,13), (8,14), (7,14), (6,14), (6,13), 
-        //     (6,12), (6,11), (6,10), (6,9), (5,8), (4,8), (3,8), (2,8), 
-        //     (1,8), (0,8), (0,7), (0,6), (1,6), (2,6), (3,6), 
-        //     (4,6), (5,6), (6,5), (6,4), (6,3), (6,2),
-        // };
-        // RED main path
-        // mainPaths["Red"] = new List<(int, int)> {
-        //     (6,1), (6,0), (7,0), (8,0), (8,1), (8,2), (8,3), (8,4), (8,5),
-        //     (9,6), (10,6), (11,6), (12,6), (13,6), (14,6), (14,7), 
-        //     (14,8), (13,8), (12,8), (11,8), (10,8), (9,8), (8,9), (8,10), 
-        //     (8,11), (8,12), (8,13), (8,14), (7,14), (6,14), (6,13), 
-        //     (6,12), (6,11), (6,10), (6,9), (5,8), (4,8), (3,8), (2,8), 
-        //     (1,8), (0,8), (0,7), (0,6), (1,6), (2,6), (3,6), 
-        //     (4,6), (5,6), (6,5), (6,4), (6,3), (6,2), 
-        // };
         // RED goal path
-        goalPaths["Red"] = new List<(int, int)> {
-            (7,5), (7,4), (7,3) // A small 3-step path to 'finish'
-        };
-
-        // BLUE main path
-        // mainPaths["Blue"] = new List<(int, int)> {
-        //     (0,9), (0,8), (0,7), (0,6), (0,5),
-        //     (1,5), (2,5), (3,5), (4,5), (5,5),
-        //     (5,6), (5,7), (5,8), (5,9),
-        //     (4,9), (3,9), (2,9), (1,9)
+        // goalPaths["Red"] = new List<(int, int)> {
+        //     (7,5), (7,4), (7,3) // A small 3-step path to 'finish'
         // };
-        // BLUE goal path
-        goalPaths["Blue"] = new List<(int, int)> {
-            (1,8), (2,8), (3,8)
-        };
 
-        // GREEN main path
-        // mainPaths["Green"] = new List<(int, int)> {
-        //     (9,9), (8,9), (7,9), (6,9), (5,9),
-        //     (5,8), (5,7), (5,6), (5,5),
-        //     (6,5), (7,5), (8,5), (9,5),
-        //     (9,6), (9,7), (9,8)
+        // goalPaths["Blue"] = new List<(int, int)> {
+        //     (1,8), (2,8), (3,8)
         // };
-        // GREEN goal path
-        goalPaths["Green"] = new List<(int, int)> {
-            (8,8), (7,8), (6,8)
-        };
 
-        // YELLOW main path
-        // mainPaths["Yellow"] = new List<(int, int)> {
-        //     (9,6), (9,5), (9,4), (9,3), (9,2),
-        //     (8,2), (7,2), (6,2), (5,2),
-        //     (5,3), (5,4), (5,5), (5,6),
-        //     (6,6), (7,6), (8,6), (9,6)
+        // goalPaths["Green"] = new List<(int, int)> {
+        //     (8,8), (7,8), (6,8)
         // };
-        // YELLOW goal path
-        goalPaths["Yellow"] = new List<(int, int)> {
-            (8,5), (7,5), (6,5)
-        };
-        InitializeFullPath(fullPath);
-        InitializeMainPaths(fullPath);
+
+        // goalPaths["Yellow"] = new List<(int, int)> {
+        //     (8,5), (7,5), (6,5)
+        // };
+        InitializeFullPath();
+        InitializeMainPaths();
+        InitializeGoalPaths();
     }
     
-    private void InitializeFullPath(List<(int, int)> fullPath)
+    private void InitializeFullPath()
     {
         
         // Unified main path
-        fullPath.AddRange(new List<(int, int)> {
+        fullPaths.AddRange(new List<(int, int)> {
             (6,1), (6,0), (7,0), (8,0), (8,1), (8,2), (8,3), (8,4), (8,5),
             (9,6), (10,6), (11,6), (12,6), (13,6), (14,6), (14,7), 
             (14,8), (13,8), (12,8), (11,8), (10,8), (9,8), (8,9), (8,10), 
@@ -132,28 +87,50 @@ public class LudoBoard
     /// <summary>
     /// Initializes main paths for each color using slices of fullPath.
     /// </summary>
-    private void InitializeMainPaths(List<(int, int)> fullPath)
+    private void InitializeMainPaths()
     {
-        mainPaths["Red"] = [.. fullPath];
-        mainPaths["Green"] = GetWrappedPath(13, fullPath);
-        mainPaths["Yellow"] = GetWrappedPath(26, fullPath);
-        mainPaths["Blue"] = GetWrappedPath(39, fullPath);
+        mainPaths["Red"] = new List<(int, int)>(fullPaths);
+        mainPaths["Green"] = GetWrappedPath(13);
+        mainPaths["Yellow"] = GetWrappedPath(26);
+        mainPaths["Blue"] = GetWrappedPath(39);
     }
 
     /// <summary>
     /// Returns a wrapped path starting at a given index.
     /// </summary>
-    private List<(int, int)> GetWrappedPath(int startIndex, List<(int, int)> fullPath)
+    private List<(int, int)> GetWrappedPath(int startIndex)
     {
         var wrappedPath = new List<(int, int)>();
-        int pathLength = fullPath.Count;
+        int pathLength = fullPaths.Count;
         
         for (int i = 0; i < pathLength; i++)
         {
-            wrappedPath.Add(fullPath[(startIndex + i) % pathLength]);
+            wrappedPath.Add(fullPaths[(startIndex + i) % pathLength]);
         }
         
         return wrappedPath;
+    }
+    // 7,2 : red first path, red has to rotate first meaning follow the markpath first before path to goal
+    // 7,2 7,1 8,1 : if one of the red piece is at this coordinate 2x means it has completed a rotation and will proceed to go to path to the goal 
+    // 8,1 -> 8,7 (goal) : path to goal
+
+    // 14,7 -> green first path
+    // 14,7 15,7 15,8 ->
+    // 15,8 -> 9,8 (goal)
+
+    // 9,14 -> yellow first path
+    // 9,14 9,15 8,15
+    // 8,15 -> 8,9 (goal)
+
+    // 2,9
+    // 2,9 1,9 1,8
+    // 1,8 -> 7,8 (goal)
+    private void InitializeGoalPaths()
+    {
+        goalPaths["Red"] = new List<(int, int)> { (6,1), (6,0), (7,0), (7,1), (7,2), (7,3), (7,4), (7,5), (7,6) };
+        goalPaths["Green"] = new List<(int, int)> { (13,6), (14,6), (14,7), (13,7), (12,7), (11,7), (10,7), (9,7), (8,7) };
+        goalPaths["Yellow"] = new List<(int, int)> { (8,13), (8,14), (7,14), (7,13), (7,12), (7,11), (7,10), (7,9), (7,8)};
+        goalPaths["Blue"] = new List<(int, int)> { (1,8), (0,8), (0,7), (1,7), (2,7), (3,7), (4,7), (5,7), (6,7) };
     }
 
     /// <summary>
@@ -448,3 +425,4 @@ public class Program
         Console.WriteLine();
     }
 }
+
