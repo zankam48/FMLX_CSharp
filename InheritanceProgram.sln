@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CobaLudo", "CobaLudo\CobaLu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ludo", "Ludo\Ludo.csproj", "{4C5F66D7-E56A-40B1-A4FB-B622261DCE56}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playground_for_testing_code", "Playground_for_testing_code\Playground_for_testing_code.csproj", "{45913E08-9391-4C25-8389-D91C0103CCCA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -84,5 +86,9 @@ Global
 		{4C5F66D7-E56A-40B1-A4FB-B622261DCE56}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4C5F66D7-E56A-40B1-A4FB-B622261DCE56}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4C5F66D7-E56A-40B1-A4FB-B622261DCE56}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45913E08-9391-4C25-8389-D91C0103CCCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45913E08-9391-4C25-8389-D91C0103CCCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45913E08-9391-4C25-8389-D91C0103CCCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45913E08-9391-4C25-8389-D91C0103CCCA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
