@@ -1,0 +1,15 @@
+D:\Coding Project\Zankam\FMLX_CSharp\LudoGame\bin\Debug\net9.0\LudoGame.exe
+D:\Coding Project\Zankam\FMLX_CSharp\LudoGame\bin\Debug\net9.0\LudoGame.deps.json
+D:\Coding Project\Zankam\FMLX_CSharp\LudoGame\bin\Debug\net9.0\LudoGame.runtimeconfig.json
+D:\Coding Project\Zankam\FMLX_CSharp\LudoGame\bin\Debug\net9.0\LudoGame.dll
+D:\Coding Project\Zankam\FMLX_CSharp\LudoGame\bin\Debug\net9.0\LudoGame.pdb
+D:\Coding Project\Zankam\FMLX_CSharp\LudoGame\obj\Debug\net9.0\LudoGame.GeneratedMSBuildEditorConfig.editorconfig
+D:\Coding Project\Zankam\FMLX_CSharp\LudoGame\obj\Debug\net9.0\LudoGame.AssemblyInfoInputs.cache
+D:\Coding Project\Zankam\FMLX_CSharp\LudoGame\obj\Debug\net9.0\LudoGame.AssemblyInfo.cs
+D:\Coding Project\Zankam\FMLX_CSharp\LudoGame\obj\Debug\net9.0\LudoGame.csproj.CoreCompileInputs.cache
+D:\Coding Project\Zankam\FMLX_CSharp\LudoGame\obj\Debug\net9.0\LudoGame.sourcelink.json
+D:\Coding Project\Zankam\FMLX_CSharp\LudoGame\obj\Debug\net9.0\LudoGame.dll
+D:\Coding Project\Zankam\FMLX_CSharp\LudoGame\obj\Debug\net9.0\refint\LudoGame.dll
+D:\Coding Project\Zankam\FMLX_CSharp\LudoGame\obj\Debug\net9.0\LudoGame.pdb
+D:\Coding Project\Zankam\FMLX_CSharp\LudoGame\obj\Debug\net9.0\LudoGame.genruntimeconfig.cache
+D:\Coding Project\Zankam\FMLX_CSharp\LudoGame\obj\Debug\net9.0\ref\LudoGame.dll
