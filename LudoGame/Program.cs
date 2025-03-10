@@ -35,54 +35,76 @@ class Program
         Dice dice = new Dice();
         GameController gameController = new GameController(players, dice);
 
+        // Set up delegates
+        gameController.OnDiceRoll = (d) => d.Roll();
+
+        gameController.OnNextPlayerTurn = (player) =>
+        {
+            Console.WriteLine($"\n🔄 It's now {player.Name}'s turn ({player.Color})!");
+        };
+
+        gameController.OnSixRoll = (player, piece, rollResult) =>
+        {
+            Console.WriteLine($"🎉 {player.Name} rolled a 6!");
+
+            if (piece.Status == PieceStatus.AT_HOME)
+            {
+                Console.WriteLine("🏠 Bringing a piece out of home!");
+                piece.Status = PieceStatus.IN_PLAY;
+                piece.Position = new Position(0, 0);
+            }
+        };
+
         // Start game loop
-        bool gameInProgress = true;
-        while (gameInProgress)
+        while (true)
         {
             Player currentPlayer = gameController.currentPlayer;
             Console.WriteLine($"\nIt's {currentPlayer.Name}'s turn ({currentPlayer.Color})!");
 
-            // Roll dice
-            int rollValue = gameController.RollDice();
-            Console.WriteLine($"Player {currentPlayer.Name} rolled a {rollValue}.");
-
-            // Display pieces
-            Console.WriteLine("Your pieces:");
-            for (int i = 0; i < currentPlayer.Pieces.Length; i++)
+            bool continueRolling;
+            do
             {
-                IPiece piece = currentPlayer.Pieces[i];
-                string status = gameController.GetPieceStatus(piece);
-                Console.WriteLine($"  [{i + 1}] Piece {i + 1}: {status}");
-            }
+                continueRolling = false;  // Reset for each roll
 
-            // Select piece to move
-            int selectedPieceIndex = -1;
-            while (selectedPieceIndex < 1 || selectedPieceIndex > 4)
-            {
-                Console.Write("Select a piece to move (1-4): ");
-                if (int.TryParse(Console.ReadLine(), out selectedPieceIndex) && selectedPieceIndex >= 1 && selectedPieceIndex <= 4)
-                    break;
-                Console.WriteLine("Invalid input. Please select a piece between 1 and 4.");
-            }
+                // Roll dice
+                int rollValue = gameController.RollDice();
+                Console.WriteLine($"🎲 {currentPlayer.Name} rolled a {rollValue}.");
 
-            IPiece selectedPiece = currentPlayer.Pieces[selectedPieceIndex - 1];
-            bool moveSuccessful = gameController.MovePiece(selectedPiece, rollValue);
+                // Display pieces
+                Console.WriteLine("Your pieces:");
+                for (int i = 0; i < currentPlayer.Pieces.Length; i++)
+                {
+                    IPiece piece = currentPlayer.Pieces[i];
+                    string status = gameController.GetPieceStatus(piece);
+                    Console.WriteLine($"  [{i + 1}] Piece {i + 1}: {status}");
+                }
 
-            if (!moveSuccessful)
-                Console.WriteLine("Invalid move. Try again.");
-            else if (selectedPiece.Status == PieceStatus.AT_HOME && rollValue != 6)
-                Console.WriteLine("You need a 6 to move a piece out of home.");
+                // Select piece to move
+                int selectedPieceIndex = -1;
+                while (selectedPieceIndex < 1 || selectedPieceIndex > 4)
+                {
+                    Console.Write("Select a piece to move (1-4): ");
+                    if (int.TryParse(Console.ReadLine(), out selectedPieceIndex) && selectedPieceIndex >= 1 && selectedPieceIndex <= 4)
+                        break;
+                    Console.WriteLine("Invalid input. Please select a piece between 1 and 4.");
+                }
 
-            // Check if game should continue
-            Console.Write("Continue playing? (y/n): ");
-            string continueInput = Console.ReadLine().Trim().ToLower();
-            if (continueInput != "y")
-                gameInProgress = false;
+                IPiece selectedPiece = currentPlayer.Pieces[selectedPieceIndex - 1];
+
+                if (rollValue == 6)
+                {
+                    gameController.HandleSixRoll(selectedPiece, rollValue);
+                    continueRolling = true;  // Allow another turn if 6 is rolled
+                }
+                else if (!gameController.MovePiece(selectedPiece, rollValue))
+                {
+                    Console.WriteLine("Invalid move. Try again.");
+                }
+
+            } while (continueRolling);  // Repeat if player rolled a 6
 
             // Next player's turn
             gameController.NextPlayerTurn();
         }
-
-        Console.WriteLine("Thanks for playing! 🎮");
     }
 }
