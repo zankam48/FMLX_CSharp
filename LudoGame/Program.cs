@@ -27,7 +27,7 @@ class Program
         for (int i = 0; i < playerCount; i++)
         {
             Console.Write($"Enter name for Player {i + 1}: ");
-            string playerName = Console.ReadLine();
+            string playerName = Console.ReadLine() ?? $"Player{i + 1}"; // Ensures no null values
             players.Add(new Player(playerName, availableColors[i]));
         }
 
@@ -64,11 +64,18 @@ class Program
             bool continueRolling;
             do
             {
-                continueRolling = false;  // Reset for each roll
+                continueRolling = false; // Reset for each roll
 
-                // Roll dice
+                // Manual dice roll
                 int rollValue = gameController.RollDice();
                 Console.WriteLine($"🎲 {currentPlayer.Name} rolled a {rollValue}.");
+
+                // Check if player has a valid move
+                if (!gameController.CanPlayerMove(currentPlayer, rollValue))
+                {
+                    Console.WriteLine("❌ No available moves. Turn skipped.");
+                    break; // Skip to next player
+                }
 
                 // Display pieces
                 Console.WriteLine("Your pieces:");
@@ -79,31 +86,44 @@ class Program
                     Console.WriteLine($"  [{i + 1}] Piece {i + 1}: {status}");
                 }
 
-                // Select piece to move
-                int selectedPieceIndex = -1;
-                while (selectedPieceIndex < 1 || selectedPieceIndex > 4)
+                // Ensure player picks a valid piece
+                IPiece selectedPiece;
+                while (true) // Loop until a valid piece is selected
                 {
                     Console.Write("Select a piece to move (1-4): ");
-                    if (int.TryParse(Console.ReadLine(), out selectedPieceIndex) && selectedPieceIndex >= 1 && selectedPieceIndex <= 4)
-                        break;
-                    Console.WriteLine("Invalid input. Please select a piece between 1 and 4.");
-                }
+                    if (!int.TryParse(Console.ReadLine(), out int selectedPieceIndex) ||
+                        selectedPieceIndex < 1 || selectedPieceIndex > 4)
+                    {
+                        Console.WriteLine("❌ Invalid selection. Try again.");
+                        continue;
+                    }
 
-                IPiece selectedPiece = currentPlayer.Pieces[selectedPieceIndex - 1];
+                    selectedPiece = currentPlayer.Pieces[selectedPieceIndex - 1];
+
+                    // Enforce valid move: Can't move a piece from home unless roll is 6
+                    if (selectedPiece.Status == PieceStatus.AT_HOME && rollValue < 6 &&
+                        gameController.HasPieceInPlay(currentPlayer))
+                    {
+                        Console.WriteLine("❌ Invalid move! Move a piece that is already in play.");
+                        continue; // Keep looping until a valid piece is chosen
+                    }
+
+                    break; // Valid selection, exit loop
+                }
 
                 if (rollValue == 6)
                 {
                     gameController.HandleSixRoll(selectedPiece, rollValue);
-                    continueRolling = true;  // Allow another turn if 6 is rolled
+                    continueRolling = true; // Allow another turn if 6 is rolled
                 }
-                else if (!gameController.MovePiece(selectedPiece, rollValue))
+                else
                 {
-                    Console.WriteLine("Invalid move. Try again.");
+                    gameController.MovePiece(selectedPiece, rollValue);
                 }
+                
 
-            } while (continueRolling);  // Repeat if player rolled a 6
+            } while (continueRolling); // Repeat if player rolled a 6
 
-            // Next player's turn
             gameController.NextPlayerTurn();
         }
     }

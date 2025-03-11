@@ -2,6 +2,7 @@ namespace LudoGame.Controller;
 using LudoGame.Enums;
 using LudoGame.Interface;
 using System;
+using System.Collections.Generic;
 
 public class GameController
 {
@@ -29,37 +30,61 @@ public class GameController
     // Get pieces status for displaying in Program
     public string GetPieceStatus(IPiece piece)
     {
-        return piece.Status == PieceStatus.AT_HOME ? "At Home" : $"Position {piece.Position.Row}";
+        return piece.Status == PieceStatus.AT_HOME ? "At Home" :
+               piece.Status == PieceStatus.AT_GOAL ? "At Goal" :
+               $"Position {piece.Position.Row}";
     }
 
-    // MovePiece method
-    public bool MovePiece(IPiece piece, int diceValue)
+    // Check if a player has any valid moves
+    public bool CanPlayerMove(Player player, int rollValue)
     {
-        if (piece is Piece && ((Piece)piece).Color != currentPlayer.Color)
+        foreach (var piece in player.Pieces)
         {
-            return false;  // Invalid move
+            if (piece.Status == PieceStatus.IN_PLAY) return true; // Has at least one piece in play
+            if (piece.Status == PieceStatus.AT_HOME && rollValue == 6) return true; // Can bring a piece out
         }
-
-        if (piece.Status == PieceStatus.AT_HOME && diceValue == 6)
-        {
-            piece.Status = PieceStatus.IN_PLAY;
-            piece.Position = new Position(0, 0);  // Move out of home to start position
-            return true;
-        }
-        else if (piece.Status == PieceStatus.AT_HOME)
-        {
-            return false;  // Can't move out of home without a 6
-        }
-
-        if (piece.Status == PieceStatus.IN_PLAY)
-        {
-            int newRow = piece.Position.Row + diceValue;
-            piece.Position = new Position(newRow, piece.Position.Column);
-            return true;
-        }
-
-        return false;  // Move not allowed
+        return false; // No valid moves
     }
+
+    // Check if a player has at least one piece in play
+    public bool HasPieceInPlay(Player player)
+    {
+        foreach (var piece in player.Pieces)
+        {
+            if (piece.Status == PieceStatus.IN_PLAY) return true;
+        }
+        return false;
+    }
+
+    // MovePiece method (Ensures Only Valid Moves)
+    public bool MovePiece(IPiece piece, int diceValue)
+{
+    if (piece is Piece && ((Piece)piece).Color != currentPlayer.Color)
+    {
+        return false; // Invalid move (wrong player's piece)
+    }
+
+    // If piece is at home and rolling 6, move it out but don't apply the dice roll value yet
+    if (piece.Status == PieceStatus.AT_HOME && diceValue == 6)
+    {
+        piece.Status = PieceStatus.IN_PLAY;
+        piece.Position = new Position(0, 0); // Move to position 0, NOT 6
+        return true;
+    }
+
+    // If piece is already in play, move it forward normally
+    if (piece.Status == PieceStatus.IN_PLAY)
+    {
+        int newRow = piece.Position.Row + diceValue;  // Move forward by dice roll
+        piece.Position = new Position(newRow, piece.Position.Column);
+        return true;
+    }
+
+    return false; // Move not allowed
+}
+
+
+
 
     // Handle rolling a six
     public void HandleSixRoll(IPiece piece, int rollResult)
@@ -80,10 +105,11 @@ public class GameController
         OnNextPlayerTurn?.Invoke(currentPlayer);
     }
 
-    // RollDice method
+    // RollDice method (Now Requires Player Input)
     public int RollDice()
     {
-        // Use delegate if set, else default dice roll
+        Console.WriteLine("🎲 Press any key to roll the dice...");
+        Console.ReadKey(true);
         return OnDiceRoll != null ? OnDiceRoll((Dice)dice) : dice.Roll();
     }
 }
