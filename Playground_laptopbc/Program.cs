@@ -257,10 +257,10 @@ public class LudoBoard
         // Set piece marker
         switch (pieceColor)
         {
-            case "Red": pieceMarker = "\u001b[41mR\u001b[0m"; break;
-            case "Blue": pieceMarker = "\u001b[41mB\u001b[0m"; break;
-            case "Green": pieceMarker = "\u001b[41mG\u001b[0m"; break;
-            case "Yellow": pieceMarker = "\u001b[41mY\u001b[0m"; break;
+            case "Red": pieceMarker = "\u001b[31mR\u001b[0m"; break;
+            case "Blue": pieceMarker = "\u001b[34mB\u001b[0m"; break;
+            case "Green": pieceMarker = "\u001b[32mG\u001b[0m"; break;
+            case "Yellow": pieceMarker = "\u001b[33mY\u001b[0m"; break;
         }
 
         pieceIndex = 0;         // start at index 0 (on main path)

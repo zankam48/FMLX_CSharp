@@ -1,0 +1,5 @@
+Dispose GC Finalizer
+GC -> Ngehandle otomatis  
+Dispose -> manual, IDisposable
+Finalizer -> ngehandle objek yg ga bisa dihandle sama dispose 
+
