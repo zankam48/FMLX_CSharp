@@ -1,0 +1,56 @@
+untuk development kita bisa ngubah mode program kita dan bisa decide untuk masukin blok2 mana yang sekiranya mau memakai fitur tersebut, fitur2 tsb diantaranya adalah debugging, logging, dll. kalua pakai conditional kita bisa ngehandle kondisi2 terntu saat runtime if (kita ada di debug mode) maka jalanin apa gtu. kl mau ngubah flag/mode di runtime bisa pake static variable flag. terus kl conditional attribute itu bekerja secara langsung untuk method dan mengontrol apakah method tersebut akan diinclude ke compile code. 
+
+
+Your summary is mostly correct, but there are a few clarifications needed:
+
+✅ Correct Points:
+Preprocessor directives (#if DEBUG) allow selective code inclusion during development.
+Common use cases include debugging, logging, and feature toggles.
+Conditional compilation happens at compile-time, not runtime.
+Conditional attributes ([Conditional("DEBUG")]) control whether a method gets included in the compiled code.
+❌ Points to Correct:
+Preprocessor directives (#if DEBUG) are evaluated at compile-time, not runtime.
+If you want to handle conditions dynamically at runtime, you must use a regular if statement with a static flag, not #if DEBUG.
+Example:
+csharp
+Copy
+Edit
+public static bool IsDebugMode = false;
+
+public void SomeMethod()
+{
+    if (IsDebugMode)
+    {
+        Console.WriteLine("Debug mode is ON at runtime.");
+    }
+}
+Conditional attributes ([Conditional("DEBUG")]) do NOT prevent compilation; they only prevent method execution.
+If a method is marked with [Conditional("DEBUG")], the method will be compiled but won't be called in Release mode.
+Example:
+csharp
+Copy
+Edit
+using System;
+using System.Diagnostics;
+
+class Program
+{
+    [Conditional("DEBUG")]
+    public static void DebugLog(string message)
+    {
+        Console.WriteLine(message);
+    }
+
+    static void Main()
+    {
+        DebugLog("This only appears in DEBUG mode");
+    }
+}
+In Release mode, DebugLog() will not be called, but its definition still exists in the compiled code.
+🚀 Fixed Summary (in English)
+For development, we can change the program mode and decide which code blocks should be included (e.g., debugging, logging, etc.).
+
+Preprocessor directives (#if DEBUG) work at compile-time and control what gets included in the compiled code.
+If we need to handle conditions at runtime, we should use a static variable flag (not #if DEBUG).
+Conditional attributes ([Conditional("DEBUG")]) work on methods and prevent their execution in Release mode, but they don’t remove them from compiled code.
+Let me know if you need further clarification! 🎯😃

@@ -1,0 +1,102 @@
+debug vs trace
+sama2 buat debug cuma kl trace bisa dipakai di release builds. dua2nya bisa logging, ngasih kondisi dan mengambil informasi secara runtime. 
+debug biasanya but dev. trace buat prod. 
+
+Debug.Fail:
+This method writes a failure message to the listeners and terminates the application if it's connected to a debugger.
+Debug.Fail("File data.txt does not exist!");
+
+
+
+
+Debug.Assert:
+This method tests a boolean expression. If the expression evaluates to false, it writes a failure message and breaks into the debugger.
+Debug.Assert(File.Exists("data.txt"), "File data.txt does not exist!");
+
+
+
+What’s a TraceListener?
+Think of TraceListener as a middleman for log messages in your app. When your program logs something using Trace, these listeners decide where that message goes—like a file, console, or Windows Event Log.
+
+By default, logs just go to the debug output window, but you can customize it to send logs wherever you need.
+
+How to Customize Logging
+You can add or remove listeners to control where your logs end up.
+
+Example: Custom Listeners
+csharp
+Copy
+Edit
+// Remove the default listener
+Trace.Listeners.Clear();
+
+// Write logs to a file
+Trace.Listeners.Add(new TextWriterTraceListener("trace.txt"));
+
+// Write logs to the console
+Trace.Listeners.Add(new TextWriterTraceListener(Console.Out));
+
+// Write logs to Windows Event Log (useful for production)
+if (!EventLog.SourceExists("DemoApp"))
+    EventLog.CreateEventSource("DemoApp", "Application");
+
+Trace.Listeners.Add(new EventLogTraceListener("DemoApp"));
+✅ What’s happening here?
+
+Logs are saved to trace.txt.
+Logs are also displayed on the console.
+Logs get sent to Windows Event Log, so system admins can track issues.
+Filtering Logs
+You don’t always want all logs in every output. That’s where filters come in.
+
+Example: Add Filters
+csharp
+Copy
+Edit
+TextWriterTraceListener tl = new TextWriterTraceListener(Console.Out);
+tl.TraceOutputOptions = TraceOptions.DateTime | TraceOptions.Callstack; 
+Trace.Listeners.Add(tl);
+✅ What this does:
+
+Adds a timestamp to logs.
+Includes the call stack (useful for debugging).
+Flushing & Closing Logs
+Since some listeners cache logs (store them in memory before writing), they might not show up instantly. You can force them to write logs immediately.
+
+Example: Flushing & Closing
+csharp
+Copy
+Edit
+Trace.Flush(); // Writes all pending logs immediately.
+Trace.Close(); // Closes all listeners (use before app exit).
+✅ When to use this?
+
+If you need to see logs in real-time, flush them.
+Before your app closes, always close listeners to avoid losing data.
+Making Logs Write Instantly
+If you don’t want to manually flush, just enable AutoFlush:
+
+csharp
+Copy
+Edit
+TextWriterTraceListener listener = new TextWriterTraceListener("log.txt");
+listener.AutoFlush = true; // Writes each log immediately.
+Trace.Listeners.Add(listener);
+✅ Why use this?
+
+Real-time monitoring (logs show up instantly).
+Less chance of data loss if your app crashes.
+TL;DR (Too Long; Didn’t Read)
+TraceListener decides where logs go (file, console, Windows Event Log, etc.).
+You can add/remove listeners to control logging destinations.
+Filters help include only useful logs.
+Flush logs to see them immediately.
+Use AutoFlush = true if you want logs to appear instantly.
+
+
+
+
+
+
+
+
