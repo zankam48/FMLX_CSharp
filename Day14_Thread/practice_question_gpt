@@ -1,0 +1,89 @@
+Here are practice exercises based on each threading concept. Try solving these to reinforce your understanding of multithreading in C#! 🚀
+
+1. Creating a Thread 🛠
+Practice:
+Write a program where:
+
+The main thread prints numbers from 1 to 10.
+A new thread prints the letters A to J.
+✅ Goal: Use Thread to create and start a new thread.
+
+2. Checking Thread Lifecycle and State 🏁
+Practice:
+
+Create a thread that sleeps for 3 seconds.
+Check and print its IsAlive status before and after sleep.
+✅ Goal: Observe thread lifecycle and IsAlive.
+
+3. Joining Threads 🏋️ udah ada di 2
+Practice:
+
+Start a thread that counts from 1 to 5.
+Use Join() to ensure the main thread waits for it to finish before printing "Thread completed!".
+✅ Goal: Learn how to block execution until a thread finishes.
+
+4. Sleeping a Thread 😴 udah di 2
+Practice:
+
+Start a thread that prints "Tick" every second for 5 times using Thread.Sleep(1000).
+✅ Goal: Simulate a timer using Thread.Sleep().
+
+5. Thread Safety & Shared State 🔒
+Practice:
+
+Create a shared counter variable.
+Start two threads that increment the counter 1000 times each.
+Run it with and without a lock to see race conditions.
+✅ Goal: Understand race conditions and how lock prevents them.
+
+6. Passing Data to Threads 📦
+Practice:
+
+Create a method that takes a name as a parameter and prints "Hello, [Name]".
+Start a thread and pass "Alice" and "Bob" as arguments.
+✅ Goal: Use ThreadStart or ParameterizedThreadStart to pass data.
+
+7. Exception Handling in Threads ⚠️
+Practice:
+
+Create a thread that throws an exception.
+Use try-catch to handle the exception inside the thread.
+✅ Goal: Learn how to properly catch exceptions in a multithreaded program.
+
+8. Foreground vs Background Threads 🌗
+Practice:
+
+Create a background thread that prints "Background running..." every 2 seconds.
+Make sure the program exits immediately if the main thread finishes.
+✅ Goal: Understand the difference between foreground and background threads.
+
+9. Thread Priority ⚡
+Practice:
+
+Create two threads:
+One with ThreadPriority.Highest
+One with ThreadPriority.Lowest
+Print which one completes faster.
+✅ Goal: Experiment with ThreadPriority.
+
+10. Signaling Between Threads 🚦
+Practice:
+
+Start a thread that waits for a signal (ManualResetEvent).
+The main thread should send the signal after 3 seconds.
+✅ Goal: Learn how threads communicate using signaling.
+
+11. Thread Pool & Task Parallelism 🚀
+Practice:
+
+Use ThreadPool.QueueUserWorkItem() to execute 3 different tasks.
+Use Task.Run() to run another method asynchronously.
+✅ Goal: Understand when to use ThreadPool vs Task.Run.
+
+12. Compute-bound vs I/O-bound Operations ⚡📡
+Practice:
+
+Start one thread that performs calculations (compute-bound).
+Start another thread that reads user input (I/O-bound).
+Observe how they execute differently.
+✅ Goal: Understand how different workloads affect threading.

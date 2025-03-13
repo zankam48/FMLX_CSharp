@@ -1,0 +1,101 @@
+Here are practice exercises based on asynchronous programming in C#. These exercises vary in difficulty and cover multiple concepts in one practice when necessary. 🚀
+
+🟢 Beginner-Level Exercises
+1️⃣ Understanding Synchronous vs Asynchronous Execution
+Practice:
+Create two methods:
+Synchronous: Waits for 3 seconds using Thread.Sleep(), then prints "Sync Done!".
+Asynchronous: Waits for 3 seconds using Task.Delay(), then prints "Async Done!".
+Call both methods and observe the difference.
+✅ Goal: Understand how blocking and non-blocking execution work.
+
+2️⃣ Writing Your First Async Method
+Practice:
+Write an async method called FetchDataAsync that:
+Simulates a network call by using Task.Delay(2000).
+Returns "Data received!".
+In Main(), call FetchDataAsync and print the result.
+✅ Goal: Understand async/await syntax and how async methods return values.
+
+🟡 Intermediate-Level Exercises
+3️⃣ Running Multiple Tasks in Parallel
+Practice:
+Write two async methods:
+DownloadFileAsync(string fileName): Simulates downloading a file by waiting 3s (Task.Delay(3000)).
+ProcessFileAsync(string fileName): Simulates processing a file by waiting 2s.
+In Main(), call both methods in parallel using Task.WhenAll().
+✅ Goal: Learn how to run multiple async tasks efficiently.
+
+4️⃣ Using Continuations (ContinueWith)
+Practice:
+Create an async method ComputePrimesAsync(int count).
+Use Task.Run() to compute prime numbers (simulate a long calculation).
+Use .ContinueWith() to print the result after computation.
+✅ Goal: Understand task continuations and how to chain async operations.
+
+5️⃣ Handling I/O-Bound vs CPU-Bound Operations
+Practice:
+Create:
+An I/O-bound async method (ReadFileAsync) that simulates reading a file (Task.Delay(2000)).
+A CPU-bound method (CalculateFactorial(int n)) that computes factorial without async.
+Run ReadFileAsync using await, but run CalculateFactorial(n) in Task.Run().
+✅ Goal: Understand when to use async/await vs parallel tasks.
+
+🟠 Advanced-Level Exercises
+6️⃣ Implementing Cancellation in Async Operations
+Practice:
+Create an async method DownloadDataAsync(CancellationToken token), which:
+Waits for 5 seconds (Task.Delay(5000)).
+Stops immediately if cancellation is requested.
+In Main(), start the download and cancel after 2 seconds.
+✅ Goal: Learn how to cancel async tasks using CancellationToken.
+
+7️⃣ Handling Timeouts with Task.WhenAny()
+Practice:
+Create an async method FetchUserDataAsync() that:
+Simulates fetching user data (takes 5 seconds).
+Use Task.WhenAny() to:
+Wait for either the user data or a timeout of 3 seconds.
+If the timeout wins, throw a TimeoutException.
+✅ Goal: Learn how to handle timeouts efficiently in async programming.
+
+8️⃣ Using async IAsyncEnumerable<> (Async Streams)
+Practice:
+Create an async generator GenerateNumbersAsync() that:
+Yields numbers from 1 to 5, with a delay of 1 second between each.
+Use await foreach to print each number as it becomes available.
+✅ Goal: Learn how to handle async streams in C# 8+.
+
+🔴 Expert-Level Challenges
+9️⃣ Implementing a Task-Based Web Scraper
+Practice:
+Create an async method FetchWebDataAsync(string url):
+Uses HttpClient to fetch data.
+Returns the first 100 characters of the response.
+Fetch 3 websites in parallel using Task.WhenAll().
+✅ Goal: Apply real-world async programming for web requests.
+
+🔟 Combining Async Tasks with Thread-Safety
+Practice:
+Create a shared counter variable.
+Start two async tasks, each incrementing the counter 1000 times.
+Use a lock or Interlocked.Increment() to prevent race conditions.
+✅ Goal: Understand thread-safety in async tasks.
+
+🚀 Bonus: Full-Project Challenge
+Build an Async Stock Price Fetcher
+Practice:
+Create an async console app that:
+Fetches stock prices from an API (simulate using Task.Delay()).
+Cancels the request if it takes more than 5 seconds.
+Uses async streams to continuously update stock prices every second.
+✅ Goal: Build an async real-world application using all key async concepts!
+
+🎯 Final Thoughts
+These exercises will gradually build your async programming skills in C#:
+
+✅ Start with basic async/await syntax.
+✅ Move on to parallel tasks and continuations.
+✅ Learn advanced patterns like cancellation, timeouts, and async streams.
+✅ Apply async concepts in real-world scenarios.
+🔥 Let me know which challenge you want to try first, and I’ll help guide you! 🚀
