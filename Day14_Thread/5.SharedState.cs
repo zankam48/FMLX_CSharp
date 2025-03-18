@@ -8,11 +8,11 @@ public class ThreadSafetyExample
 
     public static void Main(string[] args)
     {
-        // without lock (race condition)
+        // without lock : race condition
         Console.WriteLine("Without lock (race condition):");
         RunThreads(false);
 
-        // with lock (thread safety)
+        // with lock : thread safety
         Console.WriteLine("\nWith lock (thread safety):");
         counter = 0; // reset counter
         RunThreads(true);
