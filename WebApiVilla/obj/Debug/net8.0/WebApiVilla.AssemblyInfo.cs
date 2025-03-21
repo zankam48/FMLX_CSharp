@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WebApiVilla")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8df759622ffa35b9f0d2c8930ba2617bc056402e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7ecdcb539601a0adaedb5b3b47a3d9fe8a6d43a0")]
 [assembly: System.Reflection.AssemblyProductAttribute("WebApiVilla")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WebApiVilla")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
