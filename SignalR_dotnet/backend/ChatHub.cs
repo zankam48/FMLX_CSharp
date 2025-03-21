@@ -7,3 +7,4 @@ public class ChatHub : Hub
         await Clients.All.SendAsync("ReceiveMessage", message);
     }
 }
+

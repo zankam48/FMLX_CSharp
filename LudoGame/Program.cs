@@ -88,6 +88,7 @@ class Program
 
                 // Ensure player picks a valid piece
                 IPiece selectedPiece;
+    
                 while (true) // Loop until a valid piece is selected
                 {
                     Console.Write("Select a piece to move (1-4): ");

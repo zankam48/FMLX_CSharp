@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Playground_laptopbc")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cf1761d2e7314bf003e47891b476581e15964b7d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c4c0e5c44564c0f4fe9cba70fe7fc856c8490d83")]
 [assembly: System.Reflection.AssemblyProductAttribute("Playground_laptopbc")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Playground_laptopbc")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

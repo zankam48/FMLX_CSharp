@@ -1,17 +1,19 @@
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddSignalR();
 
-builder.Services.AddCors(o => 
+builder.Services.AddCors(options =>
 {
-    o.AddPolicy("AllowAnyOrigin", p => p
-        
-        .AllowAnyHeader()
-        .AllowAnyMethod()
-        .AllowCredentials());
+    options.AddPolicy("AllowSpecificOrigin",
+        builder => builder
+            .WithOrigins("http://localhost:5162") // Change this to match your frontend URL
+            .AllowAnyHeader()
+            .AllowAnyMethod()
+            .AllowCredentials()); // Keep this for WebSockets
 });
 
+builder.Services.AddSignalR();
+
 var app = builder.Build();
-app.UseCors("AllowAnyOrigin");
+app.UseCors("AllowSpecificOrigin");
 app.MapHub<ChatHub>("/chathub");
 app.Run();

@@ -95,6 +95,14 @@ Use AutoFlush = true if you want logs to appear instantly.
 
 
 
+kondisi menang belum ditambahin
+stacking piece visual masih jelek - v
+untuk kode field di board harus dipublic untuk diaccess harusnya jgn gtu
+masih ada board di class player 
+
+
+
+
 
 
 

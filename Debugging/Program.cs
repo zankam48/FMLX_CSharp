@@ -313,6 +313,7 @@ namespace LudoDemo
                         break;
                     }
                 }
+    
 
                 board.UpdatePiecePosition(pieceMarker, currentSquare, newSquare);
                 pieceIndex = newIndex;
