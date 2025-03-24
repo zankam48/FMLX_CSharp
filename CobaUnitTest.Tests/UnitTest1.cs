@@ -11,13 +11,15 @@ public class RoboticArmControllerTests
         var controller = new RoboticArmController();
         controller.RotateTo(90);
         ClassicAssert.AreEqual(90, controller.currentAngle);
+        // Assert.That(Is.Equals(90, controller.currentAngle));
     }
 
     [Test]
     public void IsAtHomePosition_WhenAngleIsZero_ReturnsTrue()
     {
         var controller = new RoboticArmController();
-        ClassicAssert.IsTrue(controller.IsAtHomePosition());
+        // ClassicAssert.IsTrue(controller.IsAtHomePosition());
+        Assert.That(controller.IsAtHomePosition(), Is.True);
     }
 
     [Test]
@@ -25,6 +27,7 @@ public class RoboticArmControllerTests
     {
         var controller = new RoboticArmController();
         controller.RotateTo(45);
-        ClassicAssert.IsFalse(controller.IsAtHomePosition());
+        // ClassicAssert.IsFalse(controller.IsAtHomePosition());
+        Assert.That(controller.IsAtHomePosition(), Is.False);
     }   
 }
