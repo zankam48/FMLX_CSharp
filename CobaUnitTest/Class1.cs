@@ -5,7 +5,7 @@
     public void RotateTo(double angle)
     {
         if (angle < 0 || angle > 180) 
-            Console.WriteLine("Angle must be between 0 and 180!");
+            throw new ArgumentOutOfRangeException("Angle must be between 0 and 180!");
         currentAngle = angle;
     }
 
