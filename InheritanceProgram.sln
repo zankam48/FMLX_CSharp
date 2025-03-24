@@ -49,6 +49,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiVilla", "WebApiVilla\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LudoGame.Tests", "LudoGame.Tests\LudoGame.Tests.csproj", "{752A787C-700C-4165-A726-3576DC3509D1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CobaUnitTest", "CobaUnitTest\CobaUnitTest.csproj", "{94F57A31-52EB-4280-A431-5B0F3DDFE85B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CobaUnitTest.Tests", "CobaUnitTest.Tests\CobaUnitTest.Tests.csproj", "{C58046C5-8161-4109-8ECC-0E5F419E3440}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -146,6 +150,14 @@ Global
 		{752A787C-700C-4165-A726-3576DC3509D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{752A787C-700C-4165-A726-3576DC3509D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{752A787C-700C-4165-A726-3576DC3509D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94F57A31-52EB-4280-A431-5B0F3DDFE85B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94F57A31-52EB-4280-A431-5B0F3DDFE85B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94F57A31-52EB-4280-A431-5B0F3DDFE85B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94F57A31-52EB-4280-A431-5B0F3DDFE85B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C58046C5-8161-4109-8ECC-0E5F419E3440}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C58046C5-8161-4109-8ECC-0E5F419E3440}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C58046C5-8161-4109-8ECC-0E5F419E3440}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C58046C5-8161-4109-8ECC-0E5F419E3440}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{A88D7654-A817-49E2-9C6E-BBCD49AE67AE} = {6CF14AD7-2BC1-4159-9AA9-100F3B6EFAEA}

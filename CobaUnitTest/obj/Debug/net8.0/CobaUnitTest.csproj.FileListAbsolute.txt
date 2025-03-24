@@ -1,0 +1,12 @@
+C:\Users\Batch 12\Documents\Zankam\FMLX_CSharp\CobaUnitTest\bin\Debug\net8.0\CobaUnitTest.deps.json
+C:\Users\Batch 12\Documents\Zankam\FMLX_CSharp\CobaUnitTest\bin\Debug\net8.0\CobaUnitTest.dll
+C:\Users\Batch 12\Documents\Zankam\FMLX_CSharp\CobaUnitTest\bin\Debug\net8.0\CobaUnitTest.pdb
+C:\Users\Batch 12\Documents\Zankam\FMLX_CSharp\CobaUnitTest\obj\Debug\net8.0\CobaUnitTest.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Batch 12\Documents\Zankam\FMLX_CSharp\CobaUnitTest\obj\Debug\net8.0\CobaUnitTest.AssemblyInfoInputs.cache
+C:\Users\Batch 12\Documents\Zankam\FMLX_CSharp\CobaUnitTest\obj\Debug\net8.0\CobaUnitTest.AssemblyInfo.cs
+C:\Users\Batch 12\Documents\Zankam\FMLX_CSharp\CobaUnitTest\obj\Debug\net8.0\CobaUnitTest.csproj.CoreCompileInputs.cache
+C:\Users\Batch 12\Documents\Zankam\FMLX_CSharp\CobaUnitTest\obj\Debug\net8.0\CobaUnitTest.sourcelink.json
+C:\Users\Batch 12\Documents\Zankam\FMLX_CSharp\CobaUnitTest\obj\Debug\net8.0\CobaUnitTest.dll
+C:\Users\Batch 12\Documents\Zankam\FMLX_CSharp\CobaUnitTest\obj\Debug\net8.0\refint\CobaUnitTest.dll
+C:\Users\Batch 12\Documents\Zankam\FMLX_CSharp\CobaUnitTest\obj\Debug\net8.0\CobaUnitTest.pdb
+C:\Users\Batch 12\Documents\Zankam\FMLX_CSharp\CobaUnitTest\obj\Debug\net8.0\ref\CobaUnitTest.dll
