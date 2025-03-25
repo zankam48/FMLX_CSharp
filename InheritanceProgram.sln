@@ -53,6 +53,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CobaUnitTest", "CobaUnitTes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CobaUnitTest.Tests", "CobaUnitTest.Tests\CobaUnitTest.Tests.csproj", "{C58046C5-8161-4109-8ECC-0E5F419E3440}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CobaMVC", "CobaMVC\CobaMVC.csproj", "{A0FF0E22-F6BE-4AAD-91EB-9E5E85C2D57C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -158,6 +160,10 @@ Global
 		{C58046C5-8161-4109-8ECC-0E5F419E3440}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C58046C5-8161-4109-8ECC-0E5F419E3440}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C58046C5-8161-4109-8ECC-0E5F419E3440}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0FF0E22-F6BE-4AAD-91EB-9E5E85C2D57C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0FF0E22-F6BE-4AAD-91EB-9E5E85C2D57C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0FF0E22-F6BE-4AAD-91EB-9E5E85C2D57C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0FF0E22-F6BE-4AAD-91EB-9E5E85C2D57C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{A88D7654-A817-49E2-9C6E-BBCD49AE67AE} = {6CF14AD7-2BC1-4159-9AA9-100F3B6EFAEA}
