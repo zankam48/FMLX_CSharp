@@ -1,0 +1,15 @@
+D:\Coding Project\FMLX_CSharp\StateDesignPattern\obj\Debug\net8.0\StateDesignPattern.GeneratedMSBuildEditorConfig.editorconfig
+D:\Coding Project\FMLX_CSharp\StateDesignPattern\obj\Debug\net8.0\StateDesignPattern.AssemblyInfoInputs.cache
+D:\Coding Project\FMLX_CSharp\StateDesignPattern\obj\Debug\net8.0\StateDesignPattern.AssemblyInfo.cs
+D:\Coding Project\FMLX_CSharp\StateDesignPattern\obj\Debug\net8.0\StateDesignPattern.csproj.CoreCompileInputs.cache
+D:\Coding Project\FMLX_CSharp\StateDesignPattern\obj\Debug\net8.0\StateDesignPattern.sourcelink.json
+D:\Coding Project\FMLX_CSharp\StateDesignPattern\bin\Debug\net8.0\StateDesignPattern.exe
+D:\Coding Project\FMLX_CSharp\StateDesignPattern\bin\Debug\net8.0\StateDesignPattern.deps.json
+D:\Coding Project\FMLX_CSharp\StateDesignPattern\bin\Debug\net8.0\StateDesignPattern.runtimeconfig.json
+D:\Coding Project\FMLX_CSharp\StateDesignPattern\bin\Debug\net8.0\StateDesignPattern.dll
+D:\Coding Project\FMLX_CSharp\StateDesignPattern\bin\Debug\net8.0\StateDesignPattern.pdb
+D:\Coding Project\FMLX_CSharp\StateDesignPattern\obj\Debug\net8.0\StateDesignPattern.dll
+D:\Coding Project\FMLX_CSharp\StateDesignPattern\obj\Debug\net8.0\refint\StateDesignPattern.dll
+D:\Coding Project\FMLX_CSharp\StateDesignPattern\obj\Debug\net8.0\StateDesignPattern.pdb
+D:\Coding Project\FMLX_CSharp\StateDesignPattern\obj\Debug\net8.0\StateDesignPattern.genruntimeconfig.cache
+D:\Coding Project\FMLX_CSharp\StateDesignPattern\obj\Debug\net8.0\ref\StateDesignPattern.dll
